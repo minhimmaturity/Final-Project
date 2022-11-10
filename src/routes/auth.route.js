@@ -11,7 +11,7 @@ const express = require("express");
 const authRouter = express.Router();
 
 authRouter.post(
-    "/login",
+    "/",
     // check("phone").not().isEmpty().withMessage("Field email must must be input"),
     // check("password")
     // .not()
