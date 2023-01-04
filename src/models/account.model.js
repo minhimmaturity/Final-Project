@@ -9,9 +9,9 @@ Account.getByPhoneAndPassword = async function(data, result) {
 
     await db.query('SELECT * FROM account WHERE phone = ? AND password = ?', [data.phone, data.password], function(err, account) {
         if (err || account.length == 0 || account == null) {
-            result("Login failed", null);
+            result(false, null);
         } else {
-            result("Login successful", account[0]);
+            result(true, account[0]);
 
             // const role = account[0].role;
             // if (role == -1) {

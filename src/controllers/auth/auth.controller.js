@@ -33,8 +33,6 @@ const signIncontroller = async(req, res) => {
         } else {
             res.send({ status: status, token: null })
         }
-
-
     });
 }
 
