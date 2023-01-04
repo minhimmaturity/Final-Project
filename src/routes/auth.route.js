@@ -15,7 +15,7 @@ authRouter.post(
 
 
 authRouter.get(
-    "/", home,
+    "/login", home,
 );
 
 //TEST TOKEN

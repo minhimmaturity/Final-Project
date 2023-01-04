@@ -64,7 +64,11 @@ const Student = function(student) {
     this.cccd = student.cccd;
     this.chungChiTiengAnh = student.chungChiTiengAnh;
     this.cacGiayToKhac = student.cacGiayToKhac;
-
+    this.englishLevel = student.englishLevel;
+    this.coverImage = student.coverImage;
+    this.trangThaiHoSo = student.trangThaiHoSo;
+    this.phiGiuCho = student.phiGiuCho;
+    this.phiXetTuyen = student.phiXetTuyen;
 }
 
 Student.create = async function(newStudent, result) {

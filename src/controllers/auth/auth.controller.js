@@ -38,6 +38,11 @@ const signIncontroller = async(req, res) => {
     });
 }
 
+const updateAccount = async(req, res) => {
+    //update account
+
+}
+
 
 const home = async(req, res) => {
     res.render('login');

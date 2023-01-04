@@ -1,7 +1,7 @@
 const prepareResponse = (res, status, message, args) => {
     res.status(status).json({
         message,
-        ...args,
+        ...args, //... để lấy tất cả các thuộc tính của args và gán vào đây (args là 1 object) 
     });
 };
 

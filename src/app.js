@@ -30,7 +30,7 @@ hbs.registerPartials(partialsPath);
 app.use(express.static('assets'))
 app.use(express.urlencoded({ extended: true }))
 
-const { authRouter, studentRouter, admissionsRouter } = require('./routes/index');
+const { authRouter, studentRouter, admissionsRouter, eventsRouter } = require('./routes/index');
 
 const auth = require('./controllers/Auth/auth.controller');
 
@@ -61,6 +61,7 @@ app.use(authRouter)
     // app.use(isAuth); //middleware để xác thực ng dùng bằng token
 app.use(studentRouter)
 app.use(admissionsRouter)
+app.use(eventsRouter)
 
 
 const PORT = process.env.PORT || 3000

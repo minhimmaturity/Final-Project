@@ -22,6 +22,7 @@ const { prepareResponse } = require('../../common/response')
 
 
 var Student = require('../../models/student.model');
+var Scholarship = require('../../models/scholarship.model');
 
 // HANDLE UPLOAD
 var multipleUpload = multer().fields([{ name: 'giayChungNhanTotNghiep', maxCount: 10 }, { name: 'anhChanDung', maxCount: 10 }, { name: 'bangTotNghiepTHPT', maxCount: 10 }, { name: 'giayKhaiSinh', maxCount: 10 }, { name: 'hocBaTHPT', maxCount: 10 }, { name: 'cccd', maxCount: 10 }, { name: 'chungChiTiengAnh', maxCount: 10 }, { name: 'giayToKhac', maxCount: 10 }])
@@ -125,9 +126,6 @@ const createNewStudent = async(req, res) => {
     var day = dateObj.getUTCDate();
     var year = dateObj.getUTCFullYear();
 
-
-
-
     let student = new Student({
         role: "Student",
         fullname: req.body.fullname,
@@ -155,7 +153,41 @@ const createNewStudent = async(req, res) => {
         cccd: null,
         chungChiTiengAnh: null,
         giayToKhac: null,
+        englishLevel: null,
+        coverImage: null,
+        trangThaiHoSo: snull,
+        phiGiuCho: null,
+        phiXetTuyen: null,
+
+
     });
+
+    var semester = '';
+    //compare month to create new folder
+    if (1 <= month <= 4) {
+        semester = 'Spring'
+    } else if (5 <= month <= 8) {
+        semester = 'Summer'
+    } else if (9 <= month <= 12) {
+        semester = 'Fall'
+    }
+
+    var dir = "../assets/upload/" + year;
+    console.log(dir)
+
+    //create new folder into upload folder with name of date
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+
+    if (!fs.existsSync(dir + "/" + semester)) {
+        fs.mkdirSync(dir + "/" + semester);
+    }
+
+    if (!fs.existsSync(dir + "/" + semester + "/" + day + "_" + month + "_" + year + "_" + student.id)) {
+        fs.mkdirSync(dir + "/" + semester + "/" + day + "_" + month + "_" + year + "_" + student.id);
+    }
+
     Student.create(student, function(err, student) {
         if (err) {
             res.send(err);
@@ -163,16 +195,59 @@ const createNewStudent = async(req, res) => {
             res.send(student);
         }
     });
+}
 
 
-    var dir = "../assets/upload/" + day + "_" + month + "_" + year;
-    console.log(dir)
+const checkProfile = async(student) => {
 
-    //create new folder into upload folder with name of date
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
+    if (student.birthday == null ||
+        student.hightSchool == null ||
+        student.graduationYear == null ||
+        student.address == null ||
+        student.phoneNumberFather == null ||
+        student.phoneNumberMother == null ||
+        student.nameFather == null ||
+        student.nameMother == null ||
+        student.giayChungNhanTotNghiep == null ||
+        student.anhChanDung == null ||
+        student.bangTotNghiepTHPT == null ||
+        student.giayKhaiSinh == null ||
+        student.hocBaTHPT == null ||
+        student.cccd == null ||
+        student.englishLevel == null ||
+        student.phiGiuCho == null ||
+        student.phiXetTuyen == null
+    ) {
+        return "Chưa đủ hồ sơ"
+    } else {
+        return "Đủ hồ sơ"
     }
 }
+
+const checkPhiGiuCho = async(student) => {
+    //check phi giu cho
+
+    if (student.phiGiuCho == null || student.phiGiuCho <= 5000000) {
+        return "Chưa đóng phí giữ chỗ"
+    } else {
+        return "Đã đóng phí giữ chỗ"
+    }
+}
+
+
+
+const checkPhiXetTuyen = async(student) => {
+    //check phi xet tuyen
+
+    if (student.phiXetTuyen == null || student.phiXetTuyen <= 10500000) {
+        return "Chưa đóng phí xét tuyển"
+    } else {
+        return "Đã đóng phí xét tuyển"
+    }
+}
+
+
+
 
 
 
@@ -182,12 +257,66 @@ const homeStudent = async(req, res) => {
         if (err) {
             res.send
         } else {
-            res.render('student/home', { student: student });
+            //status of profile
+            checkProfile(student).then((result) => {
+                student.trangThaiHoSo = result;
+                //update student database
+                Student.updateById(req.params.id, student, function(err, student) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        console.log("update success")
+                    }
+                });
+            });
+
+            //status of phi giu cho
+            checkPhiGiuCho(student).then((result) => {
+                student.phiGiuCho = result;
+                Student.updateById(req.params.id, student, function(err, student) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        console.log("update success")
+                    }
+                });
+
+            });
+
+            //status of phi xet tuyen
+            checkPhiXetTuyen(student).then((result) => {
+                student.phiXetTuyen = result;
+                Student.updateById(req.params.id, student, function(err, student) {
+                    if (err) {
+                        res.send(err);
+                    } else {
+                        console.log("update success")
+                    }
+                });
+            });
+
+            var scholarship = null;
+            //get schcolarship of student
+            Scholarship.getByStudentId(student.id, function(err, scholarship) {
+                if (err) {
+                    return (err);
+                } else {
+                    scholarship = scholarship
+                    return scholarship
+                }
+            });
+
+
+
+            res.send({ student: student, scholarship: scholarship });
         }
     });
 
 
+
 }
+
+
 
 
 
