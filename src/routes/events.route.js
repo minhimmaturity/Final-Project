@@ -4,14 +4,12 @@ const eventsRouter = express.Router();
 
 
 eventsRouter.post(
-    "/event",
-    createNewEvent,
+    "/event"
 );
 
 
 eventsRouter.get(
-    "/events",
-    homeEvents,
+    "/events"
 );
 
 

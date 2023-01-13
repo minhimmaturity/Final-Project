@@ -25,6 +25,7 @@ Payment.create = async function(newPayment, result) {
     });
 }
 
+
 Payment.getAll = async function(result) {
     await db.query("Select * from payment", function(err, res) {
         if (err) {

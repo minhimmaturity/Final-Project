@@ -5,7 +5,7 @@ USE tuyen_Sinh;
 
 
 CREATE TABLE IF NOT EXISTS Account (
-    ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ID VARCHAR(50) NOT NULL PRIMARY KEY,
     Phone VARCHAR(50) NOT NULL UNIQUE,
     Password VARCHAR(50) NOT NULL,
     Email VARCHAR(50) NOT NULL,
@@ -56,9 +56,9 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
 
     // thêm một trường tuyển sinh cho năm học nào
     CREATE TABLE IF NOT EXISTS Student (
-    ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ID VARCHAR(50) NOT NULL PRIMARY KEY,
     SchoolId VARCHAR(50) UNIQUE,
-    Role VARCHAR(50) NOT NULL,
+    Role INT NOT NULL,
     FullName VARCHAR(50) NOT NULL,
     Gender VARCHAR(50),
     Birthday VARCHAR(50),
@@ -96,6 +96,7 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     AdmissionFeeStatus VARCHAR(50), //trangThaiPhiXetTuyen
 
     LeadSoure VARCHAR(50) NOT NULL,
+    ImageFolder VARCHAR(100),
 	FOREIGN KEY (`Phone`) REFERENCES account(Phone),
     FOREIGN KEY (`Addmission`) REFERENCES Addmission(Id)
     );

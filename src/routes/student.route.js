@@ -3,6 +3,7 @@ const express = require("express");
 const {
     homeStudent,
     handleUpload,
+    getAStudent
 } = require("../controllers/Student/student.controller");
 
 const {
@@ -16,14 +17,13 @@ const studentRouter = express.Router();
 
 studentRouter.post(
     "/student",
-    multipleUpload,
-    handleUpload,
+    handleUpload
 );
 
 
 studentRouter.get(
     "/student",
-    homeStudent,
+    getAStudent,
 );
 
 

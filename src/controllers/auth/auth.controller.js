@@ -23,15 +23,28 @@ var Account = require("../../models/account.model");
 
 
 
+// const signIncontroller = async(req, res) => {
+//     var data = req.body;
+//     console.log(data);
+//     Account.getByPhoneAndPassword(data, async function(status, account) {
+//         if (account) {
+//             const _token = await jwt.make(account);
+//             res.send({ status: status, token: _token })
+//         } else {
+//             res.send({ status: status, token: null })
+//         }
+//     });
+// }
+
 const signIncontroller = async(req, res) => {
     var data = req.body;
     console.log(data);
     Account.getByPhoneAndPassword(data, async function(status, account) {
         if (account) {
-            const _token = await jwt.make(account);
-            res.send({ status: status, token: _token })
+
+            res.send({ status: status, account: account })
         } else {
-            res.send({ status: status, token: null })
+            res.send({ status: status, account: null })
         }
     });
 }

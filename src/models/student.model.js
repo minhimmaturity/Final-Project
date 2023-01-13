@@ -56,19 +56,23 @@ const Student = function(student) {
     this.emailMother = student.emailMother;
     this.sponsorName = student.sponsorName;
     this.emailSponsor = student.emailSponsor;
-    this.giayChungNhanTotNghiep = student.giayChungNhanTotNghiep;
-    this.bangTotNghiep = student.bangTotNghiep;
-    this.anhChanDung = student.anhChanDung;
-    this.giayKhaiSinh = student.giayKhaiSinh;
-    this.hocBaTHPT = student.hocBaTHPT;
-    this.cccd = student.cccd;
-    this.chungChiTiengAnh = student.chungChiTiengAnh;
-    this.cacGiayToKhac = student.cacGiayToKhac;
-    this.englishLevel = student.englishLevel;
-    this.coverImage = student.coverImage;
-    this.trangThaiHoSo = student.trangThaiHoSo;
-    this.phiGiuCho = student.phiGiuCho;
-    this.phiXetTuyen = student.phiXetTuyen;
+    this.temporaryCertificateOfGraduation = student.TemporaryCertificateOfGraduation;
+    this.certificateOfGraduation = student.CertificateOfGraduation;
+    this.portraitImage = student.PortraitImage;
+    this.birthCertificate = student.BirthCertificate;
+    this.studyRecords = student.StudyRecords;
+    this.citizenIdentification = student.CitizenIdentification;
+    this.englishCertificate = student.EnglishCertificate;
+    this.otherPapers = student.OtherPapers;
+    this.englishLevel = student.EnglishLevel;
+    this.coverImage = student.CoverImage;
+    this.addmission = student.Addmission;
+    this.profileStatus = student.ProfileStatus;
+    this.reservationFeeStatus = student.ReservationFeeStatus;
+    this.admissionFeeStatus = student.AdmissionFeeStatus;
+    this.leadSoure = student.LeadSoure;
+    this.imageFolder = student.ImageFolder;
+
 }
 
 Student.create = async function(newStudent, result) {
