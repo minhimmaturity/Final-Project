@@ -7,7 +7,7 @@ const Account = function(account) {
 
 Account.getByPhoneAndPassword = async function(data, result) {
 
-    await db.query('SELECT * FROM account WHERE phone = ? AND password = ?', [data.phone, data.password], function(err, account) {
+    await db.query('SELECT * FROM account WHERE Phone = ? AND Password = ?', [data.phone, data.password], function(err, account) {
         if (err || account.length == 0 || account == null) {
             result(false, null);
         } else {

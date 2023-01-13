@@ -1,12 +1,12 @@
 const db = require('../DB/connect');
 
 const Scholarship = function(scholarship) {
-    this.id = logChange.id;
-    this.id_account = logChange.id_account;
-    this.id_event = logChange.id_event;
-    this.action = logChange.action;
-    this.time = logChange.time;
-    this.description = logChange.description;
+    this.Id = scholarship.Id;
+    this.StudentId = scholarship.StudentId;
+    this.ValueScholarship = scholarship.ValueScholarship;
+    this.TypeScholarship = scholarship.TypeScholarship;
+    this.AdmissionId = scholarship.AdmissionId;
+    this.DatePropose = scholarship.DatePropose;
 
 }
 

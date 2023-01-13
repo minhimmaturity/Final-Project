@@ -213,7 +213,15 @@ const changeStudentProfileByLogChange = async(req, res) => {
 
 //add scholarship for student
 const addScholarship = async(req, res) => {
-    var studentId = req.body.studentId;
+    let scholarship = new Scholarship({
+       Id : req.body.Id,
+        StudentId : req.body.StudentId,
+        ValueScholarship    : req.body.ValueScholarship,
+        TypeScholarship: req.body.TypeScholarship,
+        AdmissionId: req.body.AdmissionId,
+       DatePropose: req.body.DatePropose,
+    
+    } );
     Scholarship.create(scholarship, function(err, scholarship) {
         if (err) {
             res.send(err);
@@ -372,7 +380,6 @@ module.exports = {
     renderSendMail,
     removeScholarship,
     updateScholarship,
-    addScholarship,
     addScholarship,
     changeStudentProfileByLogChange,
     removeLogChange

@@ -496,46 +496,46 @@ const homeStudent = async(req, res) => {
 
 
 
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    var day = dateObj.getUTCDate() + 1;
-    var year = dateObj.getUTCFullYear();
+    // var dateObj = new Date();
+    // var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    // var day = dateObj.getUTCDate() + 1;
+    // var year = dateObj.getUTCFullYear();
 
-    // var dir = path.join(`${__dirname}/../../assets/uploads/${year}/${semester}/${day}_${month}_${year}_${student.id}`);
-    var dir = path.join(`${__dirname}/../../assets/uploads/${year}`);
+    // // var dir = path.join(`${__dirname}/../../assets/uploads/${year}/${semester}/${day}_${month}_${year}_${student.id}`);
+    // var dir = path.join(`${__dirname}/../../assets/uploads/${year}`);
 
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
-    }
-    var semester = '';
-    //compare month to create new folder
-    if (1 <= month <= 4) {
-        semester = 'Spring'
-    } else if (5 <= month <= 8) {
-        semester = 'Summer'
-    } else if (9 <= month <= 12) {
-        semester = 'Fall'
-    }
+    // if (!fs.existsSync(dir)) {
+    //     fs.mkdirSync(dir);
+    // }
+    // var semester = '';
+    // //compare month to create new folder
+    // if (1 <= month <= 4) {
+    //     semester = 'Spring'
+    // } else if (5 <= month <= 8) {
+    //     semester = 'Summer'
+    // } else if (9 <= month <= 12) {
+    //     semester = 'Fall'
+    // }
 
-    dir = path.join(`${__dirname}/../../assets/uploads/${year}/${semester}`);
-    console.log(dir)
+    // dir = path.join(`${__dirname}/../../assets/uploads/${year}/${semester}`);
+    // console.log(dir)
 
-    //create new folder into upload folder with name of date
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
-    }
-
-    // if (!fs.existsSync(dir + "/" + semester)) {
-    //     fs.mkdirSync(dir + "/" + semester);
+    // //create new folder into upload folder with name of date
+    // if (!fs.existsSync(dir)) {
+    //     fs.mkdirSync(dir);
     // }
 
     // if (!fs.existsSync(dir + "/" + semester)) {
     //     fs.mkdirSync(dir + "/" + semester);
     // }
 
+    // if (!fs.existsSync(dir + "/" + semester)) {
+    //     fs.mkdirSync(dir + "/" + semester);
+    // }
 
 
-    res.send({ path: typeof dir });
+
+    // res.send({ path: uuidv4() });
 }
 
 

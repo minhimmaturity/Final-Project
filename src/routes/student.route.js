@@ -15,6 +15,7 @@ const {
 const studentRouter = express.Router();
 
 
+
 studentRouter.post(
     "/student",
     handleUpload
@@ -23,7 +24,8 @@ studentRouter.post(
 
 studentRouter.get(
     "/student",
-    getAStudent,
+    // getAStudent,
+    homeStudent
 );
 
 
