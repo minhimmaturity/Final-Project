@@ -3,6 +3,9 @@ const {
     createNewStudent,
     homeAdmission,
     addScholarship,
+    removeScholarship,
+    updateScholarship,
+    getScholarship
 } = require("../controllers/admission/admissions.controller");
 
 const admissionsRouter = express.Router();
@@ -15,6 +18,21 @@ admissionsRouter.post(
 admissionsRouter.post(
     "/addScholarship",
     addScholarship,
+);
+
+admissionsRouter.put(
+    "/updateScholarship",
+    updateScholarship,
+);
+
+admissionsRouter.delete(
+    "/removeScholarship",
+    removeScholarship,
+);
+
+admissionsRouter.get(
+    "/getScholarship",
+    getScholarship,
 );
 
 admissionsRouter.get(

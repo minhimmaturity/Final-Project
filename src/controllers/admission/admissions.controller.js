@@ -4,6 +4,11 @@ const app = express()
 app.use(express.static('assets'))
 var jwt = require('../../jwt/tokenUtils')
 
+const {
+    v1: uuidv1,
+    v4: uuidv4,
+} = require('uuid');
+
 var Account = require("../../models/account.model");
 var Student = require("../../models/student.model");
 var Event = require("../../models/event.model");
@@ -213,16 +218,17 @@ const changeStudentProfileByLogChange = async(req, res) => {
 
 //add scholarship for student
 const addScholarship = async(req, res) => {
-    let scholarship = new Scholarship({
-       Id : req.body.Id,
-        StudentId : req.body.StudentId,
-        ValueScholarship    : req.body.ValueScholarship,
+    let newScholarship = new Scholarship({
+        Id: uuidv4(),
+        StudentId: req.body.StudentId,
+        ValueScholarship: req.body.ValueScholarship,
         TypeScholarship: req.body.TypeScholarship,
         AdmissionId: req.body.AdmissionId,
-       DatePropose: req.body.DatePropose,
-    
-    } );
-    Scholarship.create(scholarship, function(err, scholarship) {
+        DatePropose: req.body.DatePropose,
+
+    });
+
+    Scholarship.create(newScholarship, function(err, scholarship) {
         if (err) {
             res.send(err);
         } else {
@@ -233,8 +239,16 @@ const addScholarship = async(req, res) => {
 
 //update scholarship for student
 const updateScholarship = async(req, res) => {
-    var studentId = req.body.studentId;
-    Scholarship.updateById(scholarship, studentId, function(err, scholarship) {
+
+    let scholarship = new Scholarship({
+        Id: req.query.Id,
+        ValueScholarship: req.body.ValueScholarship,
+        TypeScholarship: req.body.TypeScholarship,
+        AdmissionId: req.body.AdmissionId,
+        DatePropose: req.body.DatePropose,
+
+    });
+    Scholarship.updateById(scholarship, function(err, scholarship) {
         if (err) {
             res.send(err);
         } else {
@@ -245,8 +259,8 @@ const updateScholarship = async(req, res) => {
 
 //remove scholarship for student
 const removeScholarship = async(req, res) => {
-    var schcolarshipId = req.body.schcolarshipId;
-    Scholarship.remove(schcolarshipId, function(err, scholarship) {
+    var id = req.query.id;
+    Scholarship.remove(id, function(err, scholarship) {
         if (err) {
             res.send(err)
         } else {
@@ -255,6 +269,17 @@ const removeScholarship = async(req, res) => {
     });
 
 }
+
+//get all scholarship of student
+const getScholarship = async(req, res) => {
+    var Id = req.query.Id;
+    Scholarship.getById(Id, function(err, scholarship) {
+        if (err) { res.send(err) } else {
+            res.send(scholarship);
+        }
+    });
+}
+
 
 // render send mail page
 const renderSendMail = async(req, res) => {
@@ -381,6 +406,7 @@ module.exports = {
     removeScholarship,
     updateScholarship,
     addScholarship,
+    getScholarship,
     changeStudentProfileByLogChange,
     removeLogChange
 }

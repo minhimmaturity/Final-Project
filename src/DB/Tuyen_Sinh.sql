@@ -5,7 +5,7 @@ USE tuyen_Sinh;
 
 
 CREATE TABLE IF NOT EXISTS Account (
-    ID VARCHAR(50) NOT NULL PRIMARY KEY,
+    Id VARCHAR(50) NOT NULL PRIMARY KEY,
     Phone VARCHAR(50) NOT NULL UNIQUE,
     Password VARCHAR(50) NOT NULL,
     Email VARCHAR(50) NOT NULL,
@@ -53,10 +53,57 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
 -- 	FOREIGN KEY (`phone`) REFERENCES account(phone));
 
 
+                                                                                                                                                                  
+    -- CREATE TABLE IF NOT EXISTS Student (
+    -- Id VARCHAR(50) NOT NULL PRIMARY KEY,
+    -- SchoolId VARCHAR(50) UNIQUE,
+    -- Role INT NOT NULL,
+    -- FullName VARCHAR(50) NOT NULL,
+    -- Gender VARCHAR(50),
+    -- Birthday VARCHAR(50),
+    -- HightSchool VARCHAR(50),
+    -- GraduationYear VARCHAR(50),
+    -- Address VARCHAR(50),
+    -- Email VARCHAR(50),
+    -- Phone VARCHAR(50) NOT NULL UNIQUE,
+    -- LinkFacebook VARCHAR(50),
+    -- PhoneNumberFather VARCHAR(50),
+    -- NameFather VARCHAR(50),
+    -- PhoneNumberMother VARCHAR(50),
+    -- NameMother VARCHAR(50),
+    -- EmailFather VARCHAR(50),
+    -- EmailMother VARCHAR(50),
+    -- SponsorName VARCHAR(50),
+    -- EmailSponsor VARCHAR(50),
+    -- TemporaryCertificateOfGraduation VARCHAR(100),
+    -- CertificateOfGraduation VARCHAR(100), 
+    -- PortraitImage VARCHAR(100), 
+    -- BirthCertificate VARCHAR(100), 
+    -- StudyRecords VARCHAR(100), 
+    -- CitizenIdentification VARCHAR(100), 
+    -- EnglishCertificate VARCHAR(100), 
+
+    -- OtherPapers VARCHAR(100), 
+   
+    -- EnglishLevel VARCHAR(50),
+    -- CoverImage VARCHAR(100),
+
+    -- Addmission VARCHAR(50) NOT NULL,
+
+    -- ProfileStatus VARCHAR(50), 
+    -- ReservationFeeStatus VARCHAR(50),
+    -- AdmissionFeeStatus VARCHAR(50), 
+
+    -- LeadSoure VARCHAR(50) NOT NULL,
+    -- ImageFolder VARCHAR(100),
+	-- FOREIGN KEY (`Phone`) REFERENCES account(Phone),
+    -- FOREIGN KEY (`Addmission`) REFERENCES admissionaccount(ID)
+    -- );
+
 
     // thêm một trường tuyển sinh cho năm học nào
     CREATE TABLE IF NOT EXISTS Student (
-    ID VARCHAR(50) NOT NULL PRIMARY KEY,
+    Id VARCHAR(50) NOT NULL PRIMARY KEY,
     SchoolId VARCHAR(50) UNIQUE,
     Role INT NOT NULL,
     FullName VARCHAR(50) NOT NULL,
@@ -92,7 +139,7 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     Addmission INT NOT NULL,
 
     ProfileStatus VARCHAR(50), //trangThaiHoSo
-    ReservationFeeStatus. VARCHAR(50), //trangThaiPhiGiuCho
+    ReservationFeeStatus VARCHAR(50), //trangThaiPhiGiuCho
     AdmissionFeeStatus VARCHAR(50), //trangThaiPhiXetTuyen
 
     LeadSoure VARCHAR(50) NOT NULL,
@@ -143,23 +190,23 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
 
     //create table Scholarship
     CREATE TABLE IF NOT EXISTS Scholarship (
-    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    StudentId INT NOT NULL,
+    Id VARCHAR(50) NOT NULL PRIMARY KEY,
+    StudentId VARCHAR(50) NOT NULL,
     TypeScholarship VARCHAR(50) NOT NULL,
     ValueScholarship VARCHAR(50) NOT NULL,
     AdmissionId INT NOT NULL,
     DatePropose DATE NOT NULL,
-    FOREIGN KEY (`StudentId`) REFERENCES Student(Id)
+    FOREIGN KEY (`StudentId`) REFERENCES student(Id)
     );
 
     // create table Payment, thanh toán cho loại phí gì, loại phí, năm học
-    CREATE TABLE IF NOT EXISTS Payment (
-    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+   CREATE TABLE IF NOT EXISTS Payment (
+    Id VARCHAR(50) NOT NULL PRIMARY KEY,
     FeeType VARCHAR(50) NOT NULL,
-    StudentIid INT NOT NULL,
+    StudentId VARCHAR(50) NOT NULL,
     PaymentDate DATE NOT NULL,
     PaymentValue INTEGER NOT NULL,
-    FOREIGN KEY (`StudentId`) REFERENCES Student(Id));
+    FOREIGN KEY (`StudentId`) REFERENCES student(Id));
 
     // create table event
 

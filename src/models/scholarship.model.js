@@ -34,8 +34,8 @@ Scholarship.getAll = async function(result) {
     });
 }
 
-Scholarship.getById = async function(scholarshipId, result) {
-    await db.query("Select * from scholarship where id = ? ", scholarshipId, function(err, res) {
+Scholarship.getById = async function(Id, result) {
+    await db.query("Select * from scholarship where Id = ? ", Id, function(err, res) {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -58,9 +58,9 @@ Scholarship.getByStudentId = async function(studentId, result) {
 }
 
 
-Scholarship.updateById = async function(scholarship, studentId, result) {
+Scholarship.updateById = async function(scholarship, result) {
 
-    await db.query("UPDATE scholarship SET id_event = ?, id_account = ?, action = ?, time = ?, description = ? WHERE id = ?", [scholarship.id_event, scholarship.id_account, scholarship.action, scholarship.time, scholarship.description, scholarship.id], function(err, res) {
+    await db.query("UPDATE scholarship SET TypeScholarship = ?, ValueScholarship = ?, AdmissionId = ?, DatePropose = ? WHERE Id = ?", [scholarship.TypeScholarship, scholarship.ValueScholarship, scholarship.AdmissionId, scholarship.DatePropose, scholarship.Id], function(err, res) {
 
         if (err) {
             console.log("error: ", err);
