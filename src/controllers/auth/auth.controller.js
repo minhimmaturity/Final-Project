@@ -4,7 +4,6 @@
 
 const express = require('express')
 const app = express()
-const { prepareResponse } = require("../../common/response");
 var jwt = require('../../jwt/tokenUtils')
 
 
