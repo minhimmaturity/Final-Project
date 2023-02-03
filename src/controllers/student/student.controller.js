@@ -2,7 +2,7 @@ const express = require('express')
 
 const multer = require('multer')
 const path = require('path')
-const fs = require('fs')
+const fs = require('fs') //filesystem để xử lý file, đọc file, ghi file như private key
 const hbs = require('hbs')
 const util = require("util");
 const fileUpload = require('express-fileupload')
@@ -23,8 +23,6 @@ app.use(fileUpload())
 app.use(express.static('assets'))
 app.use(express.urlencoded({ extended: true }))
 
-const { prepareResponse } = require('../../common/response')
-
 // const partialsPath = path.join(__dirname, "/views/partials")
 // hbs.registerPartials(partialsPath);
 
@@ -32,6 +30,9 @@ const { prepareResponse } = require('../../common/response')
 var Student = require('../../models/student.model');
 var Scholarship = require('../../models/scholarship.model');
 var Account = require('../../models/account.model');
+var Payment = require('../../models/payment.model');
+
+var { prepareResponse } = require('../../common/response');
 const { get } = require('http')
 
 // HANDLE UPLOAD
@@ -538,11 +539,68 @@ const homeStudent = async(req, res) => {
     // res.send({ path: uuidv4() });
 }
 
+//add Payment for student
+const addPayment = async(req, res) => {
+    let newPayment = new Payment({
+        Id: uuidv4(),
+        StudentId: req.body.StudentId,
+        PaymentValue: req.body.ValuePayment,
+        FeeType: req.body.TypePayment,
+        PaymentDate: req.body.DatePayment,
+    });
 
+    Payment.create(newPayment, function(err, payment) {
+        if (err) {
+            return prepareResponse(res, 400, 'Add Payment Failed', err);
+        } else {
+            prepareResponse(res, 201, 'Add Payment Successfully', { payment });
+        }
+    });
+}
 
+//update payment for student
+const updatePayment = async(req, res) => {
 
+    let payment = new Payment({
+        Id: req.query.Id,
+        StudentId: req.body.StudentId,
+        PaymentValue: req.body.PaymentValue,
+        FeeType: req.body.FeeType,
+        PaymentDate: req.body.PaymentDate,
+    });
+    Payment.updateById(payment, function(err, payment) {
+        if (err) {
+            return prepareResponse(res, 400, 'Update Payment Failed', err);
+        } else {
+            prepareResponse(res, 201, 'Update Payment Successfully', { payment });
+        }
+    });
+}
 
-module.exports = { homeStudent, uploadProfile, handleUpload, uploadProfile, getAStudent }
+//remove payment for student
+const removePayment = async(req, res) => {
+    var id = req.query.id;
+    Payment.remove(id, function(err, payment) {
+        if (err) {
+            return prepareResponse(res, 400, 'Remove Payment Failed', err);
+        } else {
+            prepareResponse(res, 201, 'Remove Payment Successfully', { payment });
+        }
+    });
+
+}
+
+//get all payment of student
+const getPayment = async(req, res) => {
+    var Id = req.query.Id;
+    Payment.getById(Id, function(err, payment) {
+        if (err) { return prepareResponse(res, 400, 'Get Payment Failed', err); } else {
+            prepareResponse(res, 201, 'Get Payment Successfully', { payment });
+        }
+    });
+}
+
+module.exports = { homeStudent, uploadProfile, handleUpload, uploadProfile, getAStudent, addPayment, updatePayment, removePayment, getPayment }
 
 
 // UPLOAD IMAGE C2

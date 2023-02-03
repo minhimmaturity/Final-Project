@@ -2,6 +2,7 @@ const prepareResponse = (res, status, message, args) => {
     res.status(status).json({
         message,
         ...args, //... để lấy tất cả các thuộc tính của args và gán vào đây (args là 1 object) 
+        // ...helps to get all the properties of args and assign them here (args is an object)
     });
 };
 

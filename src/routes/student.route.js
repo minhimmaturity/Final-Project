@@ -3,7 +3,12 @@ const express = require("express");
 const {
     homeStudent,
     handleUpload,
-    getAStudent
+    getAStudent,
+    addPayment,
+    updatePayment,
+    removePayment,
+    getPayment
+
 } = require("../controllers/Student/student.controller");
 
 const {
@@ -27,6 +32,15 @@ studentRouter.get(
     // getAStudent,
     homeStudent
 );
+
+
+studentRouter.get("/payment", getPayment)
+
+studentRouter.post("/addPayment", addPayment)
+
+studentRouter.put("/updatePayment", updatePayment)
+
+studentRouter.delete("/deletePayment", removePayment)
 
 
 module.exports = { studentRouter };

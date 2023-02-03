@@ -20,9 +20,11 @@ app.set('view engine', 'hbs')
 app.set('views', '../views');
 
 app.use(express.urlencoded({ extended: true })) // dòng code giúp lấy dữ liệu từ form - body
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser') //đọc nội dung repuest gửi lên dạng post từ người dùng
+var cors = require('cors') // cho phép truy cập từ các domain khác
 app.use(bodyParser.urlencoded({ extended: true })) // khi gửi extended = true thg gặp lỗi về ký tự 
-app.use(bodyParser.json())
+app.use(bodyParser.json()) //đọc body repuest gửi lên theo cấu trúc json
+app.use(cors()) // accept request  cross domain
 
 const partialsPath = path.join(__dirname, "/views/partials");
 hbs.registerPartials(partialsPath);
@@ -30,7 +32,7 @@ hbs.registerPartials(partialsPath);
 app.use(express.static('assets'))
 app.use(express.urlencoded({ extended: true }))
 
-const { authRouter, studentRouter, admissionsRouter, eventsRouter } = require('./routes/index');
+const { authRouter, studentRouter, admissionsRouter, eventsRouter, managerRouter } = require('./routes/index');
 
 const auth = require('./controllers/Auth/auth.controller');
 
@@ -62,6 +64,7 @@ app.use(authRouter)
 app.use(studentRouter)
 app.use(admissionsRouter)
 app.use(eventsRouter)
+app.use(managerRouter)
 
 
 const PORT = process.env.PORT || 3000

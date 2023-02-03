@@ -18,6 +18,8 @@ var Scholarship = require("../../models/scholarship.model");
 var Email = require("../../models/email.model");
 var nodemailer = require('nodemailer');
 
+const { prepareResponse } = require('../../common/response')
+
 const createNewStudent = async(req, res) => {
     var data = req.body;
     console.log(data);
@@ -230,9 +232,9 @@ const addScholarship = async(req, res) => {
 
     Scholarship.create(newScholarship, function(err, scholarship) {
         if (err) {
-            res.send(err);
+            return prepareResponse(res, 400, 'Add Scholarship Failed');
         } else {
-            res.send(scholarship);
+            prepareResponse(res, 201, 'Add Scholarship Successfully', { scholarship });
         }
     });
 }
@@ -250,9 +252,9 @@ const updateScholarship = async(req, res) => {
     });
     Scholarship.updateById(scholarship, function(err, scholarship) {
         if (err) {
-            res.send(err);
+            return prepareResponse(res, 400, 'Update Scholarship Failed');
         } else {
-            res.send(scholarship);
+            prepareResponse(res, 201, 'Update Scholarship Successfully', { scholarship });
         }
     });
 }
@@ -262,9 +264,9 @@ const removeScholarship = async(req, res) => {
     var id = req.query.id;
     Scholarship.remove(id, function(err, scholarship) {
         if (err) {
-            res.send(err)
+            return prepareResponse(res, 400, 'Remove Scholarship Failed');
         } else {
-            res.send(scholarship);
+            prepareResponse(res, 201, 'Remove Scholarship Successfully', { scholarship });
         }
     });
 
@@ -274,8 +276,8 @@ const removeScholarship = async(req, res) => {
 const getScholarship = async(req, res) => {
     var Id = req.query.Id;
     Scholarship.getById(Id, function(err, scholarship) {
-        if (err) { res.send(err) } else {
-            res.send(scholarship);
+        if (err) { return prepareResponse(res, 400, 'Get Scholarship Failed'); } else {
+            prepareResponse(res, 201, 'Get Scholarship Successfully', { scholarship });
         }
     });
 }

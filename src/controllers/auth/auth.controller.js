@@ -20,6 +20,7 @@ app.use(express.static('assets'))
 
 
 var Account = require("../../models/account.model");
+var token = require("../../jwt/tokenUtils");
 
 
 
@@ -42,9 +43,9 @@ const signIncontroller = async(req, res) => {
     Account.getByPhoneAndPassword(data, async function(status, account) {
         if (account) {
             console.log(account);
-            res.send({ status: status, account: account })
+            res.status(200).json({ idToken: token.make(account), expiresIn: 480 })
         } else {
-            res.send({ status: status, account: null })
+            res.sendStatus(401);
         }
     });
 }

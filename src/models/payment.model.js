@@ -2,13 +2,11 @@ const db = require('../DB/connect');
 
 const Payment = function(payment) {
 
-    this.id = payment.id;
-    this.id_event = payment.id_event;
-    this.id_account = payment.id_account;
-    this.amount = payment.amount;
-    this.date = payment.date;
-    this.description = payment.description;
-    this.status = payment.status;
+    this.Id = payment.Id;
+    this.FeeType = payment.FeeType;
+    this.StudentId = payment.StudentId;
+    this.PaymentDate = payment.PaymentDate;
+    this.PaymentValue = payment.PaymentValue;
 
 
 }
@@ -39,7 +37,7 @@ Payment.getAll = async function(result) {
 }
 
 Payment.getById = async function(paymentId, result) {
-    await db.query("Select * from payment where id = ? ", paymentId, function(err, res) {
+    await db.query("Select * from payment where Id = ? ", paymentId, function(err, res) {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -51,8 +49,8 @@ Payment.getById = async function(paymentId, result) {
 
 Payment.updateById = async function(payment, result) {
 
-    await db.query("UPDATE payment SET id_event = ?, id_account = ?, amount = ?, date = ?, description = ?, status = ? WHERE id = ?", [payment.id_event, payment.id_account, payment.amount, payment.date, payment.description, payment.status, payment.id], function(err, res) {
-
+    await db.query("UPDATE payment SET FeeType = ?, StudentId = ?, PaymentDate = ?, PaymentValue = ? WHERE Id = ?", [payment.FeeType, payment.StudentId, payment.PaymentDate, payment.PaymentValue, payment.Id], function(err, res) {
+        console.log(payment);
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -63,7 +61,7 @@ Payment.updateById = async function(payment, result) {
 }
 
 Payment.remove = async function(id, result) {
-    await db.query("DELETE FROM payment WHERE id = ?", [id], function(err, res) {
+    await db.query("DELETE FROM payment WHERE Id = ?", [id], function(err, res) {
         if (err) {
             console.log("error: ", err);
             result(null, err);

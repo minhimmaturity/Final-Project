@@ -108,7 +108,7 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     Role INT NOT NULL,
     FullName VARCHAR(50) NOT NULL,
     Gender VARCHAR(50),
-    Birthday VARCHAR(50),
+    Birthday DATE NOT NULL,
     HightSchool VARCHAR(50),
     GraduationYear VARCHAR(50),
     Address VARCHAR(50),
@@ -136,7 +136,7 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     EnglishLevel VARCHAR(50),
     CoverImage VARCHAR(100),
 
-    Addmission INT NOT NULL,
+    Addmission VARCHAR(50) NOT NULL,
 
     ProfileStatus VARCHAR(50), //trangThaiHoSo
     ReservationFeeStatus VARCHAR(50), //trangThaiPhiGiuCho
@@ -145,7 +145,7 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     LeadSoure VARCHAR(50) NOT NULL,
     ImageFolder VARCHAR(100),
 	FOREIGN KEY (`Phone`) REFERENCES account(Phone),
-    FOREIGN KEY (`Addmission`) REFERENCES Addmission(Id)
+    FOREIGN KEY (`Addmission`) REFERENCES admissionaccount(Id)
     );
     // 3 loại status
     // học bổng - quan hệ một nhiều
@@ -169,7 +169,7 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     admissions officer, trưởng ban, trưởng phòng
     //create table Admission, THÊM MỘT BẢNG ACCOUNT của tuyển sinh, trưởng phòng, trưởng ban
     CREATE TABLE IF NOT EXISTS AdmissionAccount (
-    ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Id VARCHAR(50) NOT NULL PRIMARY KEY,
     Phone VARCHAR(50) NOT NULL UNIQUE,
     Password VARCHAR(50) NOT NULL,
     Email VARCHAR(50) NOT NULL,
@@ -181,10 +181,10 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     
 
     CREATE TABLE IF NOT EXISTS Fee (
-    Id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    Id VARCHAR(50) NOT NULL PRIMARY KEY,
     SchoolYear DATE NOT NULL,
     Fee INT NOT NULL,
-    FeeType VARCHAR(50) NOT NULL,
+    FeeType VARCHAR(50) NOT NULL
     );
 
 
