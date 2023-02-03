@@ -13,6 +13,10 @@ authRouter.post(
     signIncontroller,
 );
 
+authRouter.post(
+    "/changePassword",
+    signIncontroller,
+);
 
 authRouter.get(
     "/login", home,

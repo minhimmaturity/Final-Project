@@ -30,6 +30,18 @@ Account.getByPhoneAndPassword = async function(data, result) {
 
 }
 
+Account.changePassword = function(phone, newPassword, ) {
+    db.query("UPDATE account SET password = ? WHERE phone = ?", newPassword, phone, function(err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        } else {
+            console.log(res.result);
+            result(null, res.result);
+        }
+    });
+}
+
 Account.createAccount = function(data, result) {
     db.query("INSERT INTO account SET ?", data, function(err, res) {
         if (err) {

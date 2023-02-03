@@ -22,6 +22,8 @@ app.use(express.static('assets'))
 var Account = require("../../models/account.model");
 var token = require("../../jwt/tokenUtils");
 
+var { prepareResponse } = require('../../common/response');
+
 
 
 // const signIncontroller = async(req, res) => {
@@ -49,6 +51,25 @@ const signIncontroller = async(req, res) => {
         }
     });
 }
+
+// change password
+const changePassword = async(req, res) => {
+    var newPassword = req.body.newPassword;
+    var phone = req.body.phone;
+
+    Account.changePassword(phone, newPassword, function(err, account) {
+            if (account) {
+                prepareResponse(res, 200, 'Add Payment successful ', account);
+
+            } else {
+                prepareResponse(res, 400, 'Add Payment Failed', err);
+
+            }
+        }
+
+    )
+}
+
 
 const updateAccount = async(req, res) => {
     //update account
@@ -115,4 +136,4 @@ const isAuth = async function(req, res, next) {
 //     return prepareResponse(res, 500, error)
 // }
 
-module.exports = { signIncontroller, home, isAuth }
+module.exports = { signIncontroller, home, isAuth, changePassword }
