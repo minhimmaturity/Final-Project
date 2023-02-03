@@ -45,9 +45,9 @@ const signIncontroller = async(req, res) => {
     Account.getByPhoneAndPassword(data, async function(status, account) {
         if (account) {
             console.log(account);
-            res.status(200).json({ idToken: token.make(account), expiresIn: 480 })
+            res.status(200).json({ account, idToken: token.make(account), expiresIn: 480 })
         } else {
-            res.sendStatus(401);
+            res.status(401);
         }
     });
 }
