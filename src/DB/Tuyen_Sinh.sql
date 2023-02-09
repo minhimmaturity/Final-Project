@@ -122,7 +122,7 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     EmailFather VARCHAR(50),
     EmailMother VARCHAR(50),
     SponsorName VARCHAR(50),
-    EmailSponsor VARCHAR(50),
+    EmailSponsor VARCHAR(50),// sdt
     TemporaryCertificateOfGraduation VARCHAR(100), // giấy  chung nhan tot nghiep tam thoi
     CertificateOfGraduation VARCHAR(100), // bằng tốt nghiệp
     PortraitImage VARCHAR(100), // anh chan dung
@@ -130,9 +130,23 @@ INSERT INTO Account (Phone, Password, Email, Fullname, Address, Role, Status) VA
     StudyRecords VARCHAR(100), // học bạ THPT
     CitizenIdentification VARCHAR(100), //cccd
     EnglishCertificate VARCHAR(100), // chứng chỉ tiếng anh dịch là 
-
+    //thieu dia chi rieng cua thpt va dc
     OtherPapers VARCHAR(100), //các giay to khác
    
+
+--    Cần tạo thêm
+--    CitizenIdentificationNum // CCCD số
+--    provinceTHPT //địa chỉ trường thpt chia 3 cấp
+--    districtTHPT
+--    communeTHPT
+--    Majors
+--    Province //địa chỉ nhà riêng chia 4 cấp
+--    District
+--    Commune
+--    privateAddress
+--    SponsorPhone // sdt ng bảo hộ
+
+
     EnglishLevel VARCHAR(50),
     CoverImage VARCHAR(100),
 

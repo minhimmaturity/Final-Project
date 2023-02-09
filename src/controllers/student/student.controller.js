@@ -107,8 +107,8 @@ const { get } = require('http')
 // }
 
 let getAStudent = (req, res) => {
-    let id = req.query.id;
-    Student.getById(id, function(err, student) {
+    let phone = req.body.phone
+    Student.getByPhone(phone, function(err, student) {
         if (err) {
             res.send(err);
         } else {

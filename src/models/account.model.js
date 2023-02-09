@@ -6,7 +6,7 @@ const Account = function(account) {
 }
 
 Account.getByPhoneAndPassword = async function(data, result) {
-
+    console.log("fdgfgfgf" +data); 
     await db.query('SELECT * FROM account WHERE Phone = ? AND Password = ?', [data.phone, data.password], function(err, account) {
         if (err || account.length == 0 || account == null) {
             result(false, null);
@@ -29,16 +29,17 @@ Account.getByPhoneAndPassword = async function(data, result) {
     });
 
 }
-
-Account.changePassword = function(phone, newPassword, ) {
-    db.query("UPDATE account SET password = ? WHERE phone = ?", newPassword, phone, function(err, res) {
+ 
+Account.changePassword = function(data, result) { 
+    db.query("UPDATE account SET Password = ? WHERE Phone = ?", [data.newPassword, data.phone], function(err, res) {
         if (err) {
             console.log("error: ", err);
-            result(err, null);
+            result(null, err);
         } else {
-            console.log(res.result);
-            result(null, res.result);
+            console.log(res);
+            result(null, res);
         }
+
     });
 }
 
@@ -48,8 +49,8 @@ Account.createAccount = function(data, result) {
             console.log("error: ", err);
             result(err, null);
         } else {
-            console.log(res.insertId);
-            result(null, res.insertId);
+            console.log(res);
+            result(null, res);
         }
     });
 }
