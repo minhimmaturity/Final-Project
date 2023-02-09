@@ -70,7 +70,7 @@ const updateFee = async(req, res) => {
 
 //remove fee for student
 const removeFee = async(req, res) => {
-    var id = req.query.id;
+    var id = req.query.Id;
     Fee.remove(id, function(err, fee) {
         if (err) {
             return prepareResponse(res, 400, 'Remove fee Failed', err);

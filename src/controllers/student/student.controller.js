@@ -544,9 +544,9 @@ const addPayment = async(req, res) => {
     let newPayment = new Payment({
         Id: uuidv4(),
         StudentId: req.body.StudentId,
-        PaymentValue: req.body.ValuePayment,
-        FeeType: req.body.TypePayment,
-        PaymentDate: req.body.DatePayment,
+        PaymentValue: req.body.PaymentValue,
+        FeeType: req.body.FeeType,
+        PaymentDate: req.body.PaymentDate,
     });
 
     Payment.create(newPayment, function(err, payment) {
@@ -579,7 +579,7 @@ const updatePayment = async(req, res) => {
 
 //remove payment for student
 const removePayment = async(req, res) => {
-    var id = req.query.id;
+    var id = req.query.Id;
     Payment.remove(id, function(err, payment) {
         if (err) {
             return prepareResponse(res, 400, 'Remove Payment Failed', err);
