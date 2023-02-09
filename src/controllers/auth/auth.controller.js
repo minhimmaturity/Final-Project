@@ -40,11 +40,10 @@ var { prepareResponse } = require('../../common/response');
 
 const signIncontroller = async(req, res) => {
     var data = req.body;
-    console.log(data);
     Account.getByPhoneAndPassword(data, async function(status, account) {
         if (account) {
             console.log(account);
-            res.status(200).json({ account, idToken: token.make(account), expiresIn: 480 })
+            res.status(200).json({ account: account, idToken: token.make(account), expiresIn: 4800000 })
         } else {
             res.status(401);
         }
@@ -53,15 +52,19 @@ const signIncontroller = async(req, res) => {
 
 // change password
 const changePassword = async(req, res) => {
-    var newPassword = req.body.newPassword;
-    var phone = req.body.phone;
+    var data = req.body;
+    var phone = data.phone;
+    var newPassword = data.newPassword;
 
-    Account.changePassword(phone, newPassword, function(err, account) {
+    console.log(newPassword);
+    console.log(phone);
+
+    Account.changePassword(data, function(err, account) {
             if (account) {
-                prepareResponse(res, 200, 'Add Payment successful ', account);
+                prepareResponse(res, 200, 'update succesful', account);
 
             } else {
-                prepareResponse(res, 400, 'Add Payment Failed', err);
+                prepareResponse(res, 400, 'update pass faild', err);
 
             }
         }

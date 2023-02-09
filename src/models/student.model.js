@@ -110,6 +110,17 @@ Student.getById = async function(studentId, result) {
     });
 }
 
+Student.getByPhone = async function(phone, result) {
+    await db.query("Select * from student where phone = ? ", phone, function(err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(err, null);
+        } else {
+            result(null, res);
+        }
+    });
+}
+
 Student.updateById = async function(student, result) {
 
     await db.query("UPDATE student SET fullname = ?, birthday = ?, gender = ?, hightSchool = ?, graduationYear = ?, address = ?, email = ?, linkFacebook = ?, phoneNumberFather = ?, nameFather = ?, phoneNumberMother = ?, nameMother = ?, emailFather = ?, emailMother = ?, sponsorName = ?, emailSponsor = ?, giayChungNhanTotNghiep = ?, bangTotNghiep = ?, anhChanDung = ?, giayKhaiSinh = ?, hocBaTHPT = ?, cccd = ?, chungChiTiengAnh = ?, cacGiayToKhac = ? WHERE id = ?", [student.fullname, student.birthday, student.gender, student.hightSchool, student.graduationYear, student.address, student.email, student.linkFacebook, student.phoneNumberFather, student.nameFather, student.phoneNumberMother, student.nameMother, student.emailFather, student.emailMother, student.sponsorName, student.emailSponsor, student.giayChungNhanTotNghiep, student.bangTotNghiep, student.anhChanDung, student.giayKhaiSinh, student.hocBaTHPT, student.cccd, student.chungChiTiengAnh, student.cacGiayToKhac, student.id], function(err, res) {

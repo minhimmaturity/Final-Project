@@ -8,7 +8,7 @@ let make = function(user) {
     return new Promise(function(resolve, reject) {
         jwt.sign({ data: user }, PRIVATE_KEY, {
                 algorithm: 'RS256',
-                expiresIn: 480,
+                expiresIn: 4800000,
                 subject: user.Id
             },
             function(err, _token) {

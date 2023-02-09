@@ -4,6 +4,7 @@ var JWT = require("../jwt/tokenUtils");
 const {
     signIncontroller,
     home,
+    changePassword
 } = require("../controllers/Auth/auth.controller");
 
 const authRouter = express.Router();
@@ -15,7 +16,7 @@ authRouter.post(
 
 authRouter.post(
     "/changePassword",
-    signIncontroller,
+    changePassword,
 );
 
 authRouter.get(
