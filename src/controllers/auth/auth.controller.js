@@ -40,12 +40,12 @@ var { prepareResponse } = require('../../common/response');
 
 const signIncontroller = async(req, res) => {
     var data = req.body;
-    Account.getByPhoneAndPassword(data, async function(status, account) {
+    Account.getByPhoneAndPassword(data, async function(err, account) {
         if (account) {
             console.log(account);
             res.status(200).json({ account: account, idToken: token.make(account), expiresIn: 4800000 })
         } else {
-            res.status(401);
+            prepareResponse(res, 400, 'login failed', err);
         }
     });
 }

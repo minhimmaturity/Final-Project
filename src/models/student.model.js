@@ -111,13 +111,14 @@ Student.getById = async function(studentId, result) {
 }
 
 Student.getByPhone = async function(phone, result) {
-    await db.query("Select * from student where phone = ? ", phone, function(err, res) {
+    await db.query("Select * from student where Phone = ?", phone, function(err, student) {
+
         if (err) {
-            console.log("error: ", err);
-            result(err, null);
+            result(false, null);
         } else {
-            result(null, res);
-        }
+            result(true, student[0]);
+
+        };
     });
 }
 
@@ -133,6 +134,22 @@ Student.updateById = async function(student, result) {
         }
     });
 }
+
+
+//Test API update profile
+Student.testUpdateById = async function(phone, student, result) {
+
+    await db.query("UPDATE student SET FullName = ?, Gender = ?, GraduationYear = ?, Email = ?, LinkFacebook = ?, PhoneNumberFather = ?, NameFather = ?, PhoneNumberMother = ?, NameMother = ?, EmailFather = ?, EmailMother = ? WHERE Phone = ?", [student.FullName, student.Gender, student.GraduationYear, student.Email, student.LinkFacebook, student.PhoneNumberFather, student.NameFather, student.PhoneNumberMother, student.NameMother, student.EmailFather, student.EmailMother, phone], function(err, res) {
+
+        if (err) {
+            console.log("error: ", err);
+            result(false, err);
+        } else {
+            result(true, res);
+        }
+    });
+}
+
 
 
 

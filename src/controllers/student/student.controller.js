@@ -107,12 +107,31 @@ const { get } = require('http')
 // }
 
 let getAStudent = (req, res) => {
-    let phone = req.body.phone
-    Student.getByPhone(phone, function(err, student) {
-        if (err) {
-            res.send(err);
+    let phone = req.body.phone;
+    console.log(phone)
+    Student.getByPhone(phone, function(status, student) {
+
+        if (student) {
+            console.log(student);
+            res.status(200).json({ student: student})
         } else {
-            res.send(student);
+            res.status(401);
+        }
+    });
+}
+
+//Test update student
+let testUpdateStudent = (req, res) => {
+    let student = req.body.student;
+    let phone = req.body.phone;
+    console.log(student)
+    Student.testUpdateById(phone, student, function(status, student) {
+
+        if (student) {
+            console.log(student);
+            res.status(200).json({ student: student})
+        } else {
+            res.status(401);
         }
     });
 }
@@ -600,7 +619,7 @@ const getPayment = async(req, res) => {
     });
 }
 
-module.exports = { homeStudent, uploadProfile, handleUpload, uploadProfile, getAStudent, addPayment, updatePayment, removePayment, getPayment }
+module.exports = { homeStudent, uploadProfile, handleUpload, uploadProfile, getAStudent, addPayment, updatePayment, removePayment, getPayment, testUpdateStudent }
 
 
 // UPLOAD IMAGE C2

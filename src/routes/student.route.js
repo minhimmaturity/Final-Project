@@ -7,7 +7,8 @@ const {
     addPayment,
     updatePayment,
     removePayment,
-    getPayment
+    getPayment,
+    testUpdateStudent
 
 } = require("../controllers/Student/student.controller");
 
@@ -26,12 +27,19 @@ studentRouter.post(
     handleUpload
 );
 
+studentRouter.post(
+    "/getAStudent",
+    getAStudent
+);
+
 
 studentRouter.get(
     "/student",
     // getAStudent,
     homeStudent
 );
+
+studentRouter.post("/testUpdateStudent",testUpdateStudent);
 
 
 studentRouter.get("/payment", getPayment)
