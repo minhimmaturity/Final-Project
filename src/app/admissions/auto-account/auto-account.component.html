@@ -27,17 +27,15 @@
                                 <div class="form-group">
                                     <label>Nguồn hồ sơ</label>
                                     <div>
-                                        <select class="form-control">
-                                            <option> </option>
-                                            <option>Online</option>
-                                            <option>Direct</option>
-                                            <option>Database</option>
-                                            <option>Referal</option>
-                                            <option>Internals</option>
-                                            <option>Online Mass</option>
-                                            <option>Cộng Hưởng</option>
-                                            <option>Khác</option>
-                                        </select>
+                                        <select class="form-select form-select-sm"
+                                                    formControlName="Sourceinfor">
+
+                                                    <option *ngFor="let opt of ngOptionsSourceinfor" [value]="opt">
+                                                        {{opt}}
+                                                    </option>
+
+                                                </select>
+                                        
                                     </div>
                                 </div>
                                 <div class="form-group">

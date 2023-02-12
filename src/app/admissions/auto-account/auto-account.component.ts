@@ -7,6 +7,8 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class AutoAccountComponent implements OnInit {
  
+  ngOptionsSourceinfor = [" ","Online", "Direct", "Database", "Referal", "Internals", "Online Mass", "Cộng Hưởng", "Khác"];
+  ngDropdownSourceinfor = [" "]
   public aElement?: boolean = true;
   constructor(private router: Router) {
    

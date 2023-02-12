@@ -48,6 +48,14 @@ export class FormProfileComponent implements OnInit {
 
   ngOptionsMajors = ["Công Nghệ Thông Tin", "Quản Trị Kinh Doanh", "Thiêt Kế Đồ Họa", "Quản Trị Marketing", "Quản Trị Sự Kiện", "Quản Trị Truyền Thông"];
   ngDropdownMajor?= "Công Nghệ Thông Tin";
+  
+  ngOptionsProvinceTHPT = ["An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước",
+   "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang", "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên", "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc", "Yên Bái", "Phú Yên", "Cần Thơ", "Đà Nẵng", "Hải Phòng", "Hà Nội", "TP HCM"];
+  ngDropdownProvinceTHPT = "Hà Nội";
+  // ngOptionsProvince = ["An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước",]
+  // ngDropdownProvince = "Hà Nội";
+  // ngOptionsDistrict = []
+  ngOptionsHightSchool = []
 
   images: Images = {
     CertificateOfGraduation: null,
@@ -107,15 +115,13 @@ export class FormProfileComponent implements OnInit {
     District: new FormControl(''),
     Commune: new FormControl(''),
     privateAddress: new FormControl(''),
-    NameFather: new FormControl(''),
-    PhoneNumberFather: new FormControl(''),
-    EmailFather: new FormControl(''),
-    NameMother: new FormControl(''),
-    PhoneNumberMother: new FormControl(''),
-    EmailMother: new FormControl(''),
-    SponsorName: new FormControl(''),
-    SponsorPhone: new FormControl(''),
-    EmailSponsor: new FormControl(''),
+    NameSponsor1: new FormControl(''),
+    PhoneNumberSponsor1: new FormControl(''),
+    EmailSponsor1: new FormControl(''),
+    NameSponsor2: new FormControl(''),
+    PhoneNumberSponsor2: new FormControl(''),
+    EmailSponsor2: new FormControl(''),
+   
     CertificateOfGraduation: new FormControl(''),
     TemporaryCertificateOfGraduation: new FormControl(''),
     StudyRecords: new FormControl(''),
@@ -126,6 +132,8 @@ export class FormProfileComponent implements OnInit {
     OtherPapers: new FormControl(''),
 
   }
+
+  
   )
 
   profile() {
@@ -135,33 +143,9 @@ export class FormProfileComponent implements OnInit {
     var phone = JSON.parse(account).Phone;
     console.log("dsadsds" + phone);
 
-
-
-    // if(this.loginForm.invalid){
-    //     return false;
-    // } 
-    // truyen du lieu vao form
-    // console.log(data.phone, data.password);
-    // this.router.navigateByUrl('/students');
-
-    // return true;
-    // console.log(
-    //  this.resetPasswordForm.value);
-    // if (this.resetPasswordForm.value.oldPassword != oldPw) {
-
-    //   alert("Mật khẩu cũ không đúng");
-    //   return false;
-    // }
-    // else if (this.resetPasswordForm.value.newPassword != this.resetPasswordForm.value.reNewPassword) {
-    //   alert("Mật khẩu mới không trùng khớp");
-    //   return false;
-    // }
-    // else {
     console.log("hii");
     this.api.getAStudent(phone
     ).subscribe(res => {
-
-
       var d = JSON.parse(res); //doi tu json sang object
 
       //set display value for form control 
@@ -179,17 +163,17 @@ export class FormProfileComponent implements OnInit {
       this.profileForm.controls.Gender.setValue(d.student.Gender.toString());
 
       // this.profileForm.get('Email')?.setValue(d.student.Email.toString());
-      
+      // console.log("meeeeeeeeeeeeeee" + d.student.Email);
       // this.profileForm.get('Province')?.setValue(d.student.Province.toString());
       // this.profileForm.get('District')?.setValue(d.student.District.toString());
       // this.profileForm.get('Commune')?.setValue(d.student.Commune.toString());
       // this.profileForm.get('privateAddress')?.setValue(d.student.privateAddress.toString());
-      this.profileForm.get('NameFather')?.setValue(d.student.NameFather.toString());
-      this.profileForm.get('PhoneNumberFather')?.setValue(d.student.PhoneNumberFather.toString());
-      this.profileForm.get('EmailFather')?.setValue(d.student.EmailFather.toString());
-      this.profileForm.get('NameMother')?.setValue(d.student.NameMother.toString());
-      this.profileForm.get('PhoneNumberMother')?.setValue(d.student.PhoneNumberMother.toString());
-      this.profileForm.get('EmailMother')?.setValue(d.student.EmailMother.toString());
+      this.profileForm.get('NameSponsor1')?.setValue(d.student.NameSponsor1.toString());
+      this.profileForm.get('PhoneNumberSponsor1')?.setValue(d.student.PhoneNumberSponsor1.toString());
+      this.profileForm.get('EmailSponsor1')?.setValue(d.student.EmailSponsor1.toString());
+      this.profileForm.get('NameSponsor2')?.setValue(d.student.NameSponsor2.toString());
+      this.profileForm.get('PhoneNumberSponsor2')?.setValue(d.student.PhoneNumberSponsor2.toString());
+      this.profileForm.get('EmailSponsor2')?.setValue(d.student.EmailSponsor2.toString());
 
 
 
@@ -224,6 +208,7 @@ export class FormProfileComponent implements OnInit {
       // this.router.navigateByUrl('/students');
       // localStorage.setItem('token', res.result);
     },
+
 
       error => {
         console.log("Error", error);

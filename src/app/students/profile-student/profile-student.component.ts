@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
+import axios from 'axios';
 
 
 interface Images {
@@ -46,6 +47,15 @@ export class ProfileStudentComponent implements OnInit {
 
   ngOptionsMajors = ["Công Nghệ Thông Tin", "Quản Trị Kinh Doanh", "Thiêt Kế Đồ Họa", "Quản Trị Marketing", "Quản Trị Sự Kiện", "Quản Trị Truyền Thông"];
   ngDropdownMajor?= "Công Nghệ Thông Tin";
+  
+  ngOptionsProvinceTHPT = ["An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước",
+   "Bình Thuận", "Cà Mau", "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai", "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hà Tĩnh", "Hải Dương", "Hậu Giang", "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum", "Lai Châu", "Lâm Đồng", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định", "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị", "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên", "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang", "Vĩnh Long", "Vĩnh Phúc", "Yên Bái", "Phú Yên", "Cần Thơ", "Đà Nẵng", "Hải Phòng", "Hà Nội", "TP HCM"];
+  ngDropdownProvinceTHPT = "Hà Nội";
+  // ngOptionsProvince = ["An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bạc Liêu", "Bắc Ninh", "Bến Tre", "Bình Định", "Bình Dương", "Bình Phước",]
+  // ngDropdownProvince = "Hà Nội";
+  // ngOptionsDistrict = []
+  ngOptionsHightSchool = []
+
 
   images: Images = {
     CertificateOfGraduation: null,
@@ -81,12 +91,12 @@ export class ProfileStudentComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
+  // ngOnInit(): void {
 
-    this.profile();
-    // this.profileForm.reset();
+   
+  //   // this.profileForm.reset();
 
-  }
+  // }
 
   profileForm = new FormGroup({
     FullName: new FormControl(''),
@@ -298,6 +308,51 @@ export class ProfileStudentComponent implements OnInit {
   
       );
 
+    }
+
+
+    private citis?: HTMLSelectElement;
+    private districts?: HTMLSelectElement;
+    private wards?: HTMLSelectElement;
+  
+    ngOnInit() {
+      this.profile();
+      this.citis = document.getElementById("city") as HTMLSelectElement;
+      this.districts = document.getElementById("district") as HTMLSelectElement;
+      this.wards = document.getElementById("ward") as HTMLSelectElement;
+  // lay api ra
+      axios.get("https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json") 
+        .then(result => {
+          this.renderCity(result.data);
+        });
+    }
+  
+    private renderCity(data: any) {
+      for (const x of data) {
+        this.citis!.options[this.citis!.options.length] = new Option(x.Name, x.Id); 
+      }
+      this.citis!.onchange = () => {
+        this.districts!.length = 1;
+        this.wards!.length = 1;
+        if (this.citis!.value !== "") {
+          const result = data.filter((n: any) => n.Id === this.citis!.value);
+  
+          for (const k of result[0].Districts) {
+            this.districts!.options[this.districts!.options.length] = new Option(k.Name, k.Id);
+          }
+        }
+      };
+      this.districts!.onchange = () => {
+        this.wards!.length = 1;
+        const dataCity = data.filter((n:any) => n.Id === this.citis!.value);
+        if (this.districts!.value !== "") {
+          const dataWards = dataCity[0].Districts.filter((n:any) => n.Id === this.districts!.value)[0].Wards;
+  
+          for (const w of dataWards) {
+            this.wards!.options[this.wards!.options.length] = new Option(w.Name, w.Id);
+          }
+        }
+      };
     }
 
 
