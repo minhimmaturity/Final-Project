@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import axios from 'axios';
+import axios  from 'axios'
 
 
 interface Images {
@@ -322,7 +322,7 @@ export class ProfileStudentComponent implements OnInit {
       this.wards = document.getElementById("ward") as HTMLSelectElement;
   // lay api ra
       axios.get("https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json") 
-        .then(result => {
+        .then((result: { data: any; }) => {
           this.renderCity(result.data);
         });
     }

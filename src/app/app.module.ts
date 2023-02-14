@@ -30,6 +30,7 @@ import { NewFeeComponent } from './accountant/new-fee/new-fee.component';
 import { ListEnglishTestWaitComponent } from './admissions/list-english-test-wait/list-english-test-wait.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoGWComponent } from './logo-gw/logo-gw.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -63,7 +64,7 @@ import { LogoGWComponent } from './logo-gw/logo-gw.component';
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, 
-    AppRoutingModule, ReactiveFormsModule 
+    AppRoutingModule, ReactiveFormsModule, RouterModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true}
