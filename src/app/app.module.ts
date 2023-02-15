@@ -27,10 +27,10 @@ import { SwitcherBodyComponent } from './switcher-body/switcher-body.component';
 import { FeeVerificationComponent } from './accountant/fee-verification/fee-verification.component';
 import { EditTypeFeeComponent } from './accountant/edit-type-fee/edit-type-fee.component';
 import { NewFeeComponent } from './accountant/new-fee/new-fee.component';
-import { ListEnglishTestWaitComponent } from './admissions/list-english-test-wait/list-english-test-wait.component';
+import { ListEnglishTestWaitComponent } from './admissions/test-ta/list-english-test-wait/list-english-test-wait.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoGWComponent } from './logo-gw/logo-gw.component';
-import { RouterModule } from '@angular/router';
+import { TestTaComponent} from './admissions/test-ta/test-ta.component'
 
 
 
@@ -52,6 +52,7 @@ import { RouterModule } from '@angular/router';
     ListStudentComponent,
     AccountantComponent,
     SwitcherBodyComponent,
+    TestTaComponent,
    
     FeeVerificationComponent,
     EditTypeFeeComponent,
@@ -64,7 +65,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule, HttpClientModule, FormsModule, 
-    AppRoutingModule, ReactiveFormsModule, RouterModule
+    AppRoutingModule, ReactiveFormsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true}

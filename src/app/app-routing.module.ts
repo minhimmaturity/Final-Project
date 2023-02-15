@@ -17,7 +17,7 @@ import { AccountantComponent } from './accountant/accountant.component';
 import { FeeVerificationComponent } from './accountant/fee-verification/fee-verification.component';
 import { EditTypeFeeComponent } from './accountant/edit-type-fee/edit-type-fee.component';
 import { NewFeeComponent } from './accountant/new-fee/new-fee.component';
-import { ListEnglishTestWaitComponent } from './admissions/list-english-test-wait/list-english-test-wait.component';
+import { ListEnglishTestWaitComponent } from './admissions/test-ta/list-english-test-wait/list-english-test-wait.component';
 import { TestTaComponent } from './admissions/test-ta/test-ta.component';
 
 
@@ -48,8 +48,8 @@ const routes: Routes = [
           { path: 'formprofile', component: FormProfileComponent },
         ]
       }, 
-      {path: 'listtest', component: ListEnglishTestWaitComponent, children: [
-        {path: 'testenglish', component: TestTaComponent},
+      {path: 'listtest', component: TestTaComponent, children: [
+        {path: 'testenglish', component: ListEnglishTestWaitComponent},
       ]},
 
       {

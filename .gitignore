@@ -36,6 +36,12 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+package.json
+tsconfig.app.json
+tsconfig.json
+tsconfig.spec.json
+package-lock.json
+angular.json
 
 # System files
 .DS_Store
