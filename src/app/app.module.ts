@@ -30,7 +30,9 @@ import { NewFeeComponent } from './accountant/new-fee/new-fee.component';
 import { ListEnglishTestWaitComponent } from './admissions/test-ta/list-english-test-wait/list-english-test-wait.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoGWComponent } from './logo-gw/logo-gw.component';
-import { TestTaComponent} from './admissions/test-ta/test-ta.component'
+import { TestTaComponent} from './admissions/test-ta/test-ta.component';
+import { WaitEnglishComponent } from './admissions/test-ta/wait-english/wait-english.component';
+import { FinishtestComponent } from './admissions/test-ta/finishtest/finishtest.component'
 
 
 
@@ -60,6 +62,8 @@ import { TestTaComponent} from './admissions/test-ta/test-ta.component'
     ListEnglishTestWaitComponent,
     HeaderComponent,
     LogoGWComponent,
+    WaitEnglishComponent,
+    FinishtestComponent,
    
    
   ],

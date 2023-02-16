@@ -19,6 +19,8 @@ import { EditTypeFeeComponent } from './accountant/edit-type-fee/edit-type-fee.c
 import { NewFeeComponent } from './accountant/new-fee/new-fee.component';
 import { ListEnglishTestWaitComponent } from './admissions/test-ta/list-english-test-wait/list-english-test-wait.component';
 import { TestTaComponent } from './admissions/test-ta/test-ta.component';
+import { WaitEnglishComponent } from './admissions/test-ta/wait-english/wait-english.component';
+import { FinishtestComponent } from './admissions/test-ta/finishtest/finishtest.component';
 
 
 
@@ -48,8 +50,10 @@ const routes: Routes = [
           { path: 'formprofile', component: FormProfileComponent },
         ]
       }, 
-      {path: 'listtest', component: TestTaComponent, children: [
-        {path: 'testenglish', component: ListEnglishTestWaitComponent},
+      {path: 'test', component: TestTaComponent, children: [
+        {path: 'liststudenttest', component: ListEnglishTestWaitComponent},
+        {path: 'studentwait', component: WaitEnglishComponent},
+        {path: 'finishtest', component: FinishtestComponent}
       ]},
 
       {

@@ -21,7 +21,11 @@
 .userZone {
     display: inline-flex;
     justify-content: flex-start;
-    width: 200px;
+}
+
+.userZone button {
+    margin-left: 25px;
+    width: 100px;
 }
 
 .ckMajor {
@@ -37,5 +41,9 @@
 #footerModal {
     display: flex;
     place-content: center;
+}
+
+.lblMajor {
+    margin-left: 7px;
 }
 

@@ -39,3 +39,11 @@
     place-content: center;
 }
 
+.linkTable {
+    width: 350px;
+}
+
+.linkTable a{
+    text-decoration: none;
+    color: black;
+}

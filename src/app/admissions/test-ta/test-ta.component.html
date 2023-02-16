@@ -9,7 +9,7 @@
             <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            Products List
+            Danh sách sinh viên
           </li>
         </ol>
       </nav>
@@ -29,23 +29,23 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              Dropdown button
+              Các danh sách sinh viên
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li>
-                <a [routerLink]="['admissions/listtest/testenglish']">
-                  Action
+              <li class = "linkTable">
+                <a [routerLink]="['/admissions/test/liststudenttest']" >
+                  Tất cả sinh viên đủ điều kiện nhập học
                 </a>
               </li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li class = "linkTable"><a [routerLink]="['/admissions/test/studentwait']" class = "linkTable"> Danh sách sinh viên các trình độ tiếng anh </a></li>
+              <li class = "linkTable"><a [routerLink]="['/admissions/test/finishtest']" class = "linkTable">NE đi học</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <router-outlet></router-outlet>
+      <router-outlet> </router-outlet>
       <nav class="float-end mt-4" aria-label="Page navigation">
         <ul class="pagination">
           <li class="page-item disabled">
