@@ -53,7 +53,8 @@
               "src/assets/main-files/snacked/ltr/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js",
               "src/assets/main-files/snacked/ltr/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js",
               "src/assets/main-files/snacked/ltr/assets/js/app.js",
-              "src/assets/main-files/snacked/ltr/assets/js/index.js"
+              "src/assets/main-files/snacked/ltr/assets/js/index.js",
+              "src/assets/main-files/snacked/ltr/assets/js/list-student.js"
             ]
           },
           "configurations": {
@@ -121,5 +122,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
