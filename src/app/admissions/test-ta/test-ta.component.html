@@ -32,13 +32,26 @@
               Các danh sách sinh viên
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li class = "linkTable">
-                <a [routerLink]="['/admissions/test/liststudenttest']" >
+              <li class="linkTable">
+                <a [routerLink]="['/admissions/test/liststudenttest']">
                   Tất cả sinh viên đủ điều kiện nhập học
                 </a>
               </li>
-              <li class = "linkTable"><a [routerLink]="['/admissions/test/studentwait']" class = "linkTable"> Danh sách sinh viên các trình độ tiếng anh </a></li>
-              <li class = "linkTable"><a [routerLink]="['/admissions/test/finishtest']" class = "linkTable">NE đi học</a></li>
+              <li class="linkTable">
+                <a
+                  [routerLink]="['/admissions/test/studentwait']"
+                  class="linkTable"
+                >
+                  Danh sách sinh viên các trình độ tiếng anh
+                </a>
+              </li>
+              <li class="linkTable">
+                <a
+                  [routerLink]="['/admissions/test/finishtest']"
+                  class="linkTable"
+                  >NE đi học</a
+                >
+              </li>
             </ul>
           </div>
         </div>

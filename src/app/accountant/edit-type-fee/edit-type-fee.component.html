@@ -1,44 +1,256 @@
 <div class="card-body">
 
-    <div class="table-responsive">
+    <div>
         <h3 class="text-success text-center">TẤT CẢ CÁC LOẠI PHÍ</h3>
-        <a [routerLink]="['/accountant/edittypefee/newfee']"> <button class="btn btn-primary"> Tạo Loại phí mới
-            </button></a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Tạo phí mới
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Fee name:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Fee type:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+
+                    <div class="mb-3 mt-3">
+                        <label for="email" class="form-label">Fee type:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    </div>
+
+                    <div class="dropdown" id = "drwYearNew">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                          Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                        </ul>
+                      </div>
+
+                    <div class="form-check mb-3">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" name="remember"> Đồng ý với các điều khoản
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         <br>
-        <router-outlet></router-outlet>
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
 
-        <table class="table align-middle table-striped">
-            <tbody>
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
 
-                <tr>
-                    <td>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox">
-                        </div>
-                    </td>
-                    <!-- <select class="form-control" formControlName="Status">
-                        <option *ngFor="let stt of ngFilterStatus" [value]="stt">
-                            {{stt}}
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
 
-                        </option>
-                    </select> -->
-                    <td>Phí giữ chỗ</td>
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
 
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
 
-                    <td>
-                        <div class="d-flex align-items-center gap-3 fs-6">
-                            <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" title="" data-bs-original-title="View detail"
-                                aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                            <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
-                                aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                            <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                data-bs-placement="bottom" title="" data-bs-original-title="Delete"
-                                aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
+
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
+
+        <div class = "eachFee">
+          <div class = "fee">
+            <div class = "btnFee">
+              <button type="button" class="btn btn-primary">Edit</button>
+              <div style = "width: 10px;"></div>
+              <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+  
+            <div class = "drwYear">           
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                  <i class="fa-light fa-calendar-days"></i>
+                  Year
+                </button>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let year of ngFilterYear" [value]="year" > {{year }} </li>
+                </ul>
+            </div>
+  
+            <div class = "txtFee">
+                <p> Tên phí: Phí đăng kí</p>
+                <p> Số tiền: 20.000.000 vnd</p>
+            </div>
+          </div>
+        </div>
+        
     </div>
+  </div>
