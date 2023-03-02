@@ -1,31 +1,96 @@
-<div class="wrapper">
-    
+<script src="../../../assets/main-files/snacked/ltr/assets/js/list-student.js"></script>
+<div class="wrapper" style="margin: 0 !important;">
 
-     
-       <!--start content-->
-          
-            <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-              <div class="breadcrumb-title pe-3">eCommerce</div>
-              <div class="ps-3">
-                <nav aria-label="breadcrumb">
-                  <ol class="breadcrumb mb-0 p-0">
-                    <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">Products List</li>
-                  </ol>
-                </nav>
-              </div>
-              <div class="ms-auto">
-                <!-- <div class="btn-group">
-                  <button type="button" class="btn btn-primary">Settings</button>
-                  <button type="button" class="btn btn-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-                    <a class="dropdown-item" href="javascript:;">Another action</a>
-                    <a class="dropdown-item" href="javascript:;">Something else here</a>
-                    <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+            <div class="main__header">
+              <div class="row">
+                <div class="page-title__section col col-lg-8 col-md-8 col-12 me-auto mb-md-0 mb-3">
+                  <span class="main__title" style="display: block; font-size: 25px; font-weight: 500;">
+                    Danh sách sinh viên
+                  </span>
+                  <span class="sub__title" style="display: block; font-size: 15px;">
+                    Danh sách sinh viên đủ điều kiện nhập học
+                  </span>
+                </div>
+                <div class="select-semester__section col col-lg-4 col-md-4 col-12 me-auto mb-md-0 mb-3">
+                  <div class="dropdown-container">
+                    <button class="dropdown-button main-button" tabindex="0">
+                      <span class="dropdown-title-icon">
+                        <svg width="40" height="40" viewBox="0 0 81 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect x="18" y="32" width="9" height="8" fill="#1E33F2"/>
+                          <path d="M0 25H10V75H6C2.68629 75 0 72.3137 0 69V25Z" fill="#1E33F2"/>
+                          <path d="M81 25H71V75H75C78.3137 75 81 72.3137 81 69V25Z" fill="#1E33F2"/>
+                          <rect x="8" y="67" width="63" height="8" fill="#1E33F2"/>
+                          <rect x="14" width="9" height="11" rx="4" fill="#1E33F2"/>
+                          <rect x="58" width="9" height="11" rx="4" fill="#1E33F2"/>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6 7C2.68629 7 0 9.68629 0 13V26H9V25H72V26H81V13C81 9.68629 78.3137 7 75 7H6Z" fill="#1E33F2"/>
+                          <rect x="36" y="32" width="9" height="8" fill="#1E33F2"/>
+                          <rect x="54" y="32" width="9" height="8" fill="#1E33F2"/>
+                        </svg>
+                      </span>
+                      <span class="dropdown-title text-truncate">
+                        <p class="dropdown-text">Change semester</p>
+                        <p class="dropdown-subtext">Spring 2022</p>
+                      </span>
+                      <span class="dropdown-arrow">
+                        <svg class="dropdown-item-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                        </svg>
+                      </span>
+                    </button>
+                    <div class="dropdown-list-container">
+                      <div class="dropdown-list-wrapper">
+                        <ul class="dropdown-list">
+                            <li class="dropdown-list-item">
+                                <button class="dropdown-button list-button">
+                                  <span class="text-truncate">Spring 2022</span>
+                                </button>
+                              </li>
+                              <li class="dropdown-list-item">
+                                <button class="dropdown-button list-button">
+                                  <span class="text-truncate">Spring 2021</span>
+                                </button>
+                              </li>
+                              <li class="dropdown-list-item">
+                                <button class="dropdown-button list-button">
+                                  <span class="text-truncate">Summer 2021</span>
+                                </button>
+                              </li>
+                              <li class="dropdown-list-item">
+                                <button class="dropdown-button list-button">
+                                  <span class="text-truncate">Fall 2021</span>
+                                </button>
+                              </li>
+                              <li class="dropdown-list-item">
+                                <button class="dropdown-button list-button">
+                                  <span class="text-truncate">Spring 2020</span>
+                                </button>
+                              </li>
+                              <li class="dropdown-list-item">
+                                <button class="dropdown-button list-button">
+                                  <span class="text-truncate">Summer 2020</span>
+                                </button>
+                              </li>
+                              <li class="dropdown-list-item">
+                                <button class="dropdown-button list-button">
+                                  <span class="text-truncate">Fall 2020</span>
+                                </button>
+                              </li>
+                        </ul>
+                        <div class="floating-icon" aria-hidden="true"></div>
+                      </div>
+                    </div>
                   </div>
-                </div> -->
+                </div>
+              </div>
+              <div class="row search-wrapper">
+                <div class="col col-lg-1 col-md-1 col-sm-0"></div>
+                <div class="col col-lg-4 col-md-4 col-12 mb-auto mb-md-0 input-icons">
+                  <i class="bi bi-search"></i>
+                  <input type="text" class="search-student form-control input-field">
+                </div>
+                <div class="col col-lg-1 col-md-1 col-12 me-auto mb-md-0">
+                  <button class="btn btn-primary filter-button">Filter</button>
+                </div>
               </div>
             </div>
             <!--end breadcrumb-->
@@ -33,25 +98,20 @@
               <div class="card">
                 <div class="card-header py-3">
                   <div class="row align-items-center m-0">
-                    <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
-                        <select class="form-select">
-                            <option>All category</option>
-                            <option>Fashion</option>
-                            <option>Electronics</option>
-                            <option>Furniture</option>
-                            <option>Sports</option>
-                        </select>
+                    <div class="col-lg-2 col-md-2 col-12 me-auto mb-md-0 mb-3 text__left">
+                        <span>
+                          <a href="#">Tất cả sinh viên đủ điều kiện nhập học</a>
+                        </span>
                     </div>
-                    <div class="col-md-2 col-6">
-                        <input type="date" class="form-control">
+                    <div class="col-lg-6 col-md-6 col-12 me-auto mb-md-0 mb-3 text__center">
+                      <span>
+                        Danh sách sinh viên các trình độ Tiếng Anh
+                      </span>
                     </div>
-                    <div class="col-md-2 col-6">
-                        <select class="form-select">
-                            <option>Status</option>
-                            <option>Active</option>
-                            <option>Disabled</option>
-                            <option>Show all</option>
-                        </select>
+                    <div class="col-lg-4 col-md-4 col-12 me-auto mb-md-0 mb-3 text__center">
+                      <span>
+                        NE đi học
+                      </span>
                     </div>
                  </div>
                 </div>
@@ -59,292 +119,502 @@
 
                   <div class="table-responsive">
                     <table class="table align-middle table-striped">
+                      <thead>
+                        <tr>
+                          <td>
+                              <input class="form-check-input table__checkbox" type="checkbox">
+                          </td>
+                          <td>
+                            Student ID
+                          </td>
+                          <td>
+                            Tên tư vấn
+                          </td>
+                          <td>
+                            NAME
+                          </td>
+                          <td>
+                            Trường
+                          </td>
+                          <td>
+                            Tỉnh
+                          </td>
+                          <td>
+                            Liên lạc
+                          </td>
+                          <td>
+                            Trình độ TA
+                          </td>
+                          <td>
+                            <span>Thông tin khác</span>
+                            <span class="bi bi-three-dots-vertical item__right"></span>
+                          </td>
+                        </tr>
+                      </thead>
                       <tbody>
                         <tr>
                           <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
+                            <input class="form-check-input table__checkbox" type="checkbox">
                           </td>
-                          <td class="productlist"><a [routerLink]="['/admissions/liststudent/formprofile']">
+                          <td>
+                            <span>#00012345</span>
+                          </td>
+                          <td>
+                            <span>Hoàng Thu Hà</span>
+                          </td>
+                          <td class="std__list"><a [routerLink]="['/admissions/liststudent/formprofile']">
                             <a class="d-flex align-items-center gap-2" >
-                              <div class="product-box">
+                              <div class="product-box std__avatar">
                                   <img src="assets/images/products/01.png" alt="">
                               </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Men White Polo T-shirt</h6>
+                              <div class="std__detail">
+                                  <span class="mb-0 std__name long__text long__text_10em bold__text">Đỗ Minh Ngọc Hoàng</span>
                               </div>
                             </a>
                              </a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-success">Active</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_8em">THPT Mỹ Đình</span>
                             </div>
                           </td>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_6em">Hồ Chí Minh</span>
+                            </div>
+                          </td>
+                          <td class="communication__area">
+                            <a href="#"><i class="bi bi-telephone-fill communication__icon"></i></a>
+                            <a href="#"><i class="bi bi-envelope communication__icon"></i></a>
+                          </td>
+                          <td><div class="std__english_level not__set_level"><span class="small__text">Chưa xếp trình độ</span></div></td>
+                          <td><span class="small__text">Chưa xác nhận test TA</span></td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
+                            <input class="form-check-input table__checkbox" type="checkbox">
                           </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/02.png" alt="">
+                          <td>
+                            <span>#00012345</span>
+                          </td>
+                          <td>
+                            <span>Hoàng Thu Hà</span>
+                          </td>
+                          <td class="std__list"><a [routerLink]="['/admissions/liststudent/formprofile']">
+                            <a class="d-flex align-items-center gap-2" >
+                              <div class="product-box std__avatar">
+                                  <img src="assets/images/products/01.png" alt="">
                               </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Formal Black Coat Pant</h6>
+                              <div class="std__detail">
+                                  <span class="mb-0 std__name long__text long__text_10em bold__text">Đỗ Minh Ngọc Hoàng</span>
                               </div>
+                            </a>
                              </a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-success">Active</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_8em">THPT Mỹ Đình</span>
                             </div>
                           </td>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_6em">Hồ Chí Minh</span>
+                            </div>
+                          </td>
+                          <td class="communication__area">
+                            <a href="#"><i class="bi bi-telephone-fill communication__icon"></i></a>
+                            <a href="#"><i class="bi bi-envelope communication__icon"></i></a>
+                          </td>
+                          <td><div class="std__english_level pass__all_level"><span class="small__text">Lên thẳng chuyên ngành</span></div></td>
+                          <td><span class="small__text">Chưa xác nhận test TA</span></td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
+                            <input class="form-check-input table__checkbox" type="checkbox">
                           </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/03.png" alt="">
+                          <td>
+                            <span>#00012345</span>
+                          </td>
+                          <td>
+                            <span>Hoàng Thu Hà</span>
+                          </td>
+                          <td class="std__list"><a [routerLink]="['/admissions/liststudent/formprofile']">
+                            <a class="d-flex align-items-center gap-2" >
+                              <div class="product-box std__avatar">
+                                  <img src="assets/images/products/01.png" alt="">
                               </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Blue Shade Jeans</h6>
+                              <div class="std__detail">
+                                  <span class="mb-0 std__name long__text long__text_10em bold__text">Đỗ Minh Ngọc Hoàng</span>
                               </div>
+                            </a>
                              </a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-warning text-dark">Archived</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_8em">THPT Mỹ Đình</span>
                             </div>
                           </td>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_6em">Hồ Chí Minh</span>
+                            </div>
+                          </td>
+                          <td class="communication__area">
+                            <a href="#"><i class="bi bi-telephone-fill communication__icon"></i></a>
+                            <a href="#"><i class="bi bi-envelope communication__icon"></i></a>
+                          </td>
+                          <td><div class="std__english_level keep__learning_level"><span class="small__text">Xếp lớp level 1</span></div></td>
+                          <td><span class="small__text">Chưa xác nhận test TA</span></td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
+                            <input class="form-check-input table__checkbox" type="checkbox">
                           </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/04.png" alt="">
+                          <td>
+                            <span>#00012345</span>
+                          </td>
+                          <td>
+                            <span>Hoàng Thu Hà</span>
+                          </td>
+                          <td class="std__list"><a [routerLink]="['/admissions/liststudent/formprofile']">
+                            <a class="d-flex align-items-center gap-2" >
+                              <div class="product-box std__avatar">
+                                  <img src="assets/images/products/01.png" alt="">
                               </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Yellow Winter Jacket for Men</h6>
+                              <div class="std__detail">
+                                  <span class="mb-0 std__name long__text long__text_10em bold__text">Đỗ Minh Ngọc Hoàng</span>
                               </div>
+                            </a>
                              </a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-danger">Disabled</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_8em">THPT Mỹ Đình</span>
                             </div>
                           </td>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_6em">Hồ Chí Minh</span>
+                            </div>
+                          </td>
+                          <td class="communication__area">
+                            <a href="#"><i class="bi bi-telephone-fill communication__icon"></i></a>
+                            <a href="#"><i class="bi bi-envelope communication__icon"></i></a>
+                          </td>
+                          <td><div class="std__english_level keep__learning_level"><span class="small__text">Xếp lớp level 4</span></div></td>
+                          <td><span class="small__text">Chưa xác nhận test TA</span></td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
+                            <input class="form-check-input table__checkbox" type="checkbox">
                           </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/05.png" alt="">
+                          <td>
+                            <span>#00012345</span>
+                          </td>
+                          <td>
+                            <span>Hoàng Thu Hà</span>
+                          </td>
+                          <td class="std__list"><a [routerLink]="['/admissions/liststudent/formprofile']">
+                            <a class="d-flex align-items-center gap-2" >
+                              <div class="product-box std__avatar">
+                                  <img src="assets/images/products/01.png" alt="">
                               </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Men Sports Shoes Nike</h6>
+                              <div class="std__detail">
+                                  <span class="mb-0 std__name long__text long__text_10em bold__text">Đỗ Minh Ngọc Hoàng</span>
                               </div>
+                            </a>
                              </a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-warning text-dark">Archived</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_8em">THPT Mỹ Đình</span>
                             </div>
                           </td>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_6em">Hồ Chí Minh</span>
+                            </div>
+                          </td>
+                          <td class="communication__area">
+                            <a href="#"><i class="bi bi-telephone-fill communication__icon"></i></a>
+                            <a href="#"><i class="bi bi-envelope communication__icon"></i></a>
+                          </td>
+                          <td><div class="std__english_level not__set_level"><span class="small__text">Chưa xếp trình độ</span></div></td>
+                          <td><span class="small__text">Chưa xác nhận test TA</span></td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
+                            <input class="form-check-input table__checkbox" type="checkbox">
                           </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/06.png" alt="">
+                          <td>
+                            <span>#00012345</span>
+                          </td>
+                          <td>
+                            <span>Hoàng Thu Hà</span>
+                          </td>
+                          <td class="std__list"><a [routerLink]="['/admissions/liststudent/formprofile']">
+                            <a class="d-flex align-items-center gap-2" >
+                              <div class="product-box std__avatar">
+                                  <img src="assets/images/products/01.png" alt="">
                               </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Fancy Home Sofa</h6>
+                              <div class="std__detail">
+                                  <span class="mb-0 std__name long__text long__text_10em bold__text">Đỗ Minh Ngọc Hoàng</span>
                               </div>
+                            </a>
                              </a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-success">Active</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_8em">THPT Mỹ Đình</span>
                             </div>
                           </td>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_6em">Hồ Chí Minh</span>
+                            </div>
+                          </td>
+                          <td class="communication__area">
+                            <a href="#"><i class="bi bi-telephone-fill communication__icon"></i></a>
+                            <a href="#"><i class="bi bi-envelope communication__icon"></i></a>
+                          </td>
+                          <td><div class="std__english_level not__set_level"><span class="small__text">Chưa xếp trình độ</span></div></td>
+                          <td><span class="small__text">Chưa xác nhận test TA</span></td>
                         </tr>
                         <tr>
                           <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
+                            <input class="form-check-input table__checkbox" type="checkbox">
                           </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/07.png" alt="">
+                          <td>
+                            <span>#00012345</span>
+                          </td>
+                          <td>
+                            <span>Hoàng Thu Hà</span>
+                          </td>
+                          <td class="std__list"><a [routerLink]="['/admissions/liststudent/formprofile']">
+                            <a class="d-flex align-items-center gap-2" >
+                              <div class="product-box std__avatar">
+                                  <img src="assets/images/products/01.png" alt="">
                               </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Sports Time Watch</h6>
+                              <div class="std__detail">
+                                  <span class="mb-0 std__name long__text long__text_10em bold__text">Đỗ Minh Ngọc Hoàng</span>
                               </div>
+                            </a>
                              </a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-success">Active</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_8em">THPT Mỹ Đình</span>
                             </div>
                           </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
+                          <td class="std__list">
+                            <div class="std__detail">
+                                <span class="mb-0 std__name long__text long__text_6em">Hồ Chí Minh</span>
                             </div>
                           </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/08.png" alt="">
-                              </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Women Blue Heals</h6>
-                              </div>
-                             </a>
+                          <td class="communication__area">
+                            <a href="#"><i class="bi bi-telephone-fill communication__icon"></i></a>
+                            <a href="#"><i class="bi bi-envelope communication__icon"></i></a>
                           </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-success">Active</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
-                          </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/09.png" alt="">
-                              </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Men Sport Hat Nike</h6>
-                              </div>
-                             </a>
-                          </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-success">Active</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox">
-                            </div>
-                          </td>
-                          <td class="productlist">
-                            <a class="d-flex align-items-center gap-2" href="#">
-                              <div class="product-box">
-                                  <img src="assets/images/products/10.png" alt="">
-                              </div>
-                              <div>
-                                  <h6 class="mb-0 product-title">Orange Micro Headphone </h6>
-                              </div>
-                             </a>
-                          </td>
-                          <td><span>$18.00</span></td>
-                          <td><span class="badge rounded-pill bg-success">Active</span></td>
-                          <td><span>5-31-2020</span></td>
-                          <td>
-                            <div class="d-flex align-items-center gap-3 fs-6">
-                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit info" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                            </div>
-                          </td>
+                          <td><div class="std__english_level not__set_level"><span class="small__text">Chưa xếp trình độ</span></div></td>
+                          <td><span class="small__text">Chưa xác nhận test TA</span></td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
 
-            <nav class="float-end mt-4" aria-label="Page navigation">
-              <ul class="pagination">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </nav>
+                  
 
+  </div>
+  <div class="export__excel">
+    <a href="#">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+        width="60pt" height="60pt" viewBox="0 0 60 60"
+        preserveAspectRatio="xMidYMid meet">
+        <g transform="translate(0.000000,60.000000) scale(0.062500,-0.062500)"
+        fill="#FF0000" stroke="none">
+        <path d="M244 867 c-3 -8 -4 -43 -2 -78 l3 -64 235 0 235 0 0 75 0 75 -233 3
+        c-190 2 -233 0 -238 -11z"/>
+        <path d="M114 606 l-34 -34 0 -126 c0 -155 6 -166 100 -166 l60 0 0 -60 c0
+        -100 1 -100 240 -100 239 0 240 0 240 100 l0 60 60 0 c94 0 100 11 100 166 l0
+        126 -34 34 -34 34 -332 0 -332 0 -34 -34z m514 -218 c16 -16 16 -160 0 -176
+        -17 -17 -279 -17 -296 0 -7 7 -12 42 -12 88 0 46 5 81 12 88 17 17 279 17 296
+        0z"/>
+        </g>
+      </svg>
+      <span style="text-decoration: underline;">
+        Xuất file excel
+      </span>
+    </a>
+  </div>
+  <div class="pagination">
+    <a href="#" title="previous page"><i class="lni lni-chevron-left"></i></a>
+    <a href="#">1</a>
+    <a href="#" class="page-active">2</a>
+    <a href="#">3</a>
+    <span class="page-dots">...</span>
+    <a href="#">6</a>
+    <a href="#" title="next page"><i class="lni lni-chevron-right"></i></a>
+  </div>
+  <div class="chat__icon">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="100%" viewBox="0 0 820 771" enable-background="new 0 0 820 771" xml:space="preserve">
+    <path fill="#0AEDE0" opacity="1.000000" stroke="none" 
+      d="
+    M1.000000,272.000000 
+      C1.000000,181.333328 1.000000,91.166664 1.000000,1.000000 
+      C274.333344,1.000000 547.666687,1.000000 821.000000,1.000000 
+      C821.000000,258.000000 821.000000,515.000000 821.000000,772.000000 
+      C547.666687,772.000000 274.333344,772.000000 1.000000,772.000000 
+      C1.000000,605.500000 1.000000,439.000000 1.000000,272.000000 
+    M737.445679,65.989929 
+      C736.723938,65.576599 735.991272,65.181282 735.282104,64.747360 
+      C711.970398,50.483532 686.686401,41.824810 659.357727,41.776985 
+      C494.205017,41.487930 329.051575,41.631756 163.898361,41.657722 
+      C160.243927,41.658295 156.558487,41.731270 152.939957,42.186966 
+      C115.345154,46.921402 82.877068,62.170582 56.400715,89.569839 
+      C27.755953,119.213097 11.861250,154.604263 11.780188,195.859695 
+      C11.429813,374.177795 11.630513,552.497009 11.630739,730.815796 
+      C11.630741,731.982361 11.607462,733.149536 11.634721,734.315491 
+      C11.989816,749.503296 29.551802,759.181641 42.580204,751.360779 
+      C96.770836,718.830261 150.937302,686.259338 205.204224,653.856567 
+      C208.002487,652.185791 211.647644,651.139771 214.899750,651.136780 
+      C360.221100,651.002319 505.542603,651.032776 650.864075,650.966431 
+      C657.494751,650.963440 664.177795,650.652039 670.747070,649.797302 
+      C709.796326,644.716187 743.066101,628.191956 769.666992,598.915405 
+      C796.360718,569.536804 810.732422,534.931763 810.879578,495.226593 
+      C811.247131,396.069366 811.013489,296.909882 810.961121,197.751297 
+      C810.958313,192.449326 810.722656,187.107208 810.056396,181.852112 
+      C803.778809,132.337143 779.359070,94.090279 737.445679,65.989929 
+    z"/>
+    <path fill="#FF0000" opacity="1.000000" stroke="none" 
+      d="
+    M737.741943,66.200935 
+      C779.359070,94.090279 803.778809,132.337143 810.056396,181.852112 
+      C810.722656,187.107208 810.958313,192.449326 810.961121,197.751297 
+      C811.013489,296.909882 811.247131,396.069366 810.879578,495.226593 
+      C810.732422,534.931763 796.360718,569.536804 769.666992,598.915405 
+      C743.066101,628.191956 709.796326,644.716187 670.747070,649.797302 
+      C664.177795,650.652039 657.494751,650.963440 650.864075,650.966431 
+      C505.542603,651.032776 360.221100,651.002319 214.899750,651.136780 
+      C211.647644,651.139771 208.002487,652.185791 205.204224,653.856567 
+      C150.937302,686.259338 96.770836,718.830261 42.580204,751.360779 
+      C29.551802,759.181641 11.989816,749.503296 11.634721,734.315491 
+      C11.607462,733.149536 11.630741,731.982361 11.630739,730.815796 
+      C11.630513,552.497009 11.429813,374.177795 11.780188,195.859695 
+      C11.861250,154.604263 27.755953,119.213097 56.400715,89.569839 
+      C82.877068,62.170582 115.345154,46.921402 152.939957,42.186966 
+      C156.558487,41.731270 160.243927,41.658295 163.898361,41.657722 
+      C329.051575,41.631756 494.205017,41.487930 659.357727,41.776985 
+      C686.686401,41.824810 711.970398,50.483532 735.282104,64.747360 
+      C735.991272,65.181282 736.723938,65.576599 737.741943,66.200935 
+    M574.500000,609.099792 
+      C600.829712,609.099792 627.161804,609.321594 653.488647,609.046753 
+      C691.189209,608.653198 721.742004,593.255188 745.093872,563.818909 
+      C762.207458,542.246399 769.756714,517.226135 769.781799,489.915680 
+      C769.869385,394.758881 769.854919,299.601898 769.745850,204.445099 
+      C769.737305,196.983948 769.136719,189.460648 768.069031,182.073517 
+      C759.956848,125.946350 710.933899,83.064850 654.180359,83.005829 
+      C492.530487,82.837723 330.880249,82.876244 169.230515,83.093002 
+      C159.685272,83.105797 149.911087,84.478546 140.638016,86.796745 
+      C89.320763,99.625710 53.076149,145.956863 53.022812,199.091599 
+      C52.858036,363.241241 52.950668,527.391113 52.960052,691.540894 
+      C52.960133,692.926392 53.190720,694.311890 53.351849,696.127441 
+      C54.602566,695.482849 55.335838,695.154480 56.020531,694.744934 
+      C101.182198,667.729187 146.362686,640.744690 191.467987,613.635193 
+      C196.816422,610.420593 202.359772,609.058044 208.537476,609.060852 
+      C330.191650,609.115479 451.845825,609.100647 574.500000,609.099792 
+    z"/>
+    <path fill="#FF0000" opacity="1.000000" stroke="none" 
+      d="
+    M574.000000,609.099854 
+      C451.845825,609.100647 330.191650,609.115479 208.537476,609.060852 
+      C202.359772,609.058044 196.816422,610.420593 191.467987,613.635193 
+      C146.362686,640.744690 101.182198,667.729187 56.020531,694.744934 
+      C55.335838,695.154480 54.602566,695.482849 53.351849,696.127441 
+      C53.190720,694.311890 52.960133,692.926392 52.960052,691.540894 
+      C52.950668,527.391113 52.858036,363.241241 53.022812,199.091599 
+      C53.076149,145.956863 89.320763,99.625710 140.638016,86.796745 
+      C149.911087,84.478546 159.685272,83.105797 169.230515,83.093002 
+      C330.880249,82.876244 492.530487,82.837723 654.180359,83.005829 
+      C710.933899,83.064850 759.956848,125.946350 768.069031,182.073517 
+      C769.136719,189.460648 769.737305,196.983948 769.745850,204.445099 
+      C769.854919,299.601898 769.869385,394.758881 769.781799,489.915680 
+      C769.756714,517.226135 762.207458,542.246399 745.093872,563.818909 
+      C721.742004,593.255188 691.189209,608.653198 653.488647,609.046753 
+      C627.161804,609.321594 600.829712,609.099792 574.000000,609.099854 
+    M470.500000,227.133591 
+      C384.373688,227.133606 298.247375,227.133484 212.121078,227.134338 
+      C209.455673,227.134369 206.776062,226.969070 204.127518,227.183182 
+      C195.750626,227.860428 188.845627,231.296066 185.593353,239.384888 
+      C182.498703,247.081741 182.984985,254.672150 188.632294,261.418365 
+      C193.563095,267.308655 200.062210,268.914215 207.356720,268.912842 
+      C340.627563,268.887756 473.898407,268.895782 607.169250,268.894653 
+      C611.000732,268.894623 614.837097,268.990662 618.662720,268.834747 
+      C627.528076,268.473389 635.553772,262.427490 637.836975,254.541962 
+      C642.020813,240.092133 632.241089,227.165314 616.931824,227.149384 
+      C568.454590,227.098969 519.977295,227.132690 470.500000,227.133591 
+    M555.500000,330.843323 
+      C539.675049,330.843384 523.850098,330.843048 508.025116,330.843506 
+      C407.244415,330.846313 306.463684,330.841156 205.682983,330.894623 
+      C202.898819,330.896088 199.927200,331.015778 197.364258,331.956055 
+      C187.479965,335.582275 182.276321,345.134003 184.145767,355.510345 
+      C185.841003,364.919647 194.365524,371.834045 204.600082,371.945618 
+      C212.928101,372.036407 221.257843,371.972443 229.586823,371.972412 
+      C358.519501,371.972076 487.452209,371.977600 616.384888,371.959808 
+      C629.290955,371.958008 638.956604,363.300354 638.815918,351.546753 
+      C638.676758,339.925781 630.467041,330.402954 616.465820,330.733917 
+      C596.487549,331.206177 576.489563,330.847015 555.500000,330.843323 
+    M271.500000,433.848175 
+      C249.177979,433.847015 226.855804,433.800812 204.533981,433.866211 
+      C195.201767,433.893555 187.816223,439.034332 185.026443,447.463379 
+      C180.056091,462.480774 191.409821,475.186798 205.722809,475.155823 
+      C342.319885,474.860077 478.917816,474.977478 615.515503,474.974945 
+      C616.681519,474.974945 617.850220,475.005066 619.013184,474.940674 
+      C632.314331,474.204620 641.339417,461.898682 638.050476,449.000153 
+      C635.536316,439.140137 628.221008,433.865051 616.826172,433.863434 
+      C502.050781,433.847107 387.275391,433.850220 271.500000,433.848175 
+    z"/>
+    <path fill="#0AEDE0" opacity="1.000000" stroke="none" 
+      d="
+    M471.000000,227.133728 
+      C519.977295,227.132690 568.454590,227.098969 616.931824,227.149384 
+      C632.241089,227.165314 642.020813,240.092133 637.836975,254.541962 
+      C635.553772,262.427490 627.528076,268.473389 618.662720,268.834747 
+      C614.837097,268.990662 611.000732,268.894623 607.169250,268.894653 
+      C473.898407,268.895782 340.627563,268.887756 207.356720,268.912842 
+      C200.062210,268.914215 193.563095,267.308655 188.632294,261.418365 
+      C182.984985,254.672150 182.498703,247.081741 185.593353,239.384888 
+      C188.845627,231.296066 195.750626,227.860428 204.127518,227.183182 
+      C206.776062,226.969070 209.455673,227.134369 212.121078,227.134338 
+      C298.247375,227.133484 384.373688,227.133606 471.000000,227.133728 
+    z"/>
+    <path fill="#0AEDE0" opacity="1.000000" stroke="none" 
+      d="
+    M556.000000,330.843140 
+      C576.489563,330.847015 596.487549,331.206177 616.465820,330.733917 
+      C630.467041,330.402954 638.676758,339.925781 638.815918,351.546753 
+      C638.956604,363.300354 629.290955,371.958008 616.384888,371.959808 
+      C487.452209,371.977600 358.519501,371.972076 229.586823,371.972412 
+      C221.257843,371.972443 212.928101,372.036407 204.600082,371.945618 
+      C194.365524,371.834045 185.841003,364.919647 184.145767,355.510345 
+      C182.276321,345.134003 187.479965,335.582275 197.364258,331.956055 
+      C199.927200,331.015778 202.898819,330.896088 205.682983,330.894623 
+      C306.463684,330.841156 407.244415,330.846313 508.025116,330.843506 
+      C523.850098,330.843048 539.675049,330.843384 556.000000,330.843140 
+    z"/>
+    <path fill="#0AEDE0" opacity="1.000000" stroke="none" 
+      d="
+    M272.000000,433.848022 
+      C387.275391,433.850220 502.050781,433.847107 616.826172,433.863434 
+      C628.221008,433.865051 635.536316,439.140137 638.050476,449.000153 
+      C641.339417,461.898682 632.314331,474.204620 619.013184,474.940674 
+      C617.850220,475.005066 616.681519,474.974945 615.515503,474.974945 
+      C478.917816,474.977478 342.319885,474.860077 205.722809,475.155823 
+      C191.409821,475.186798 180.056091,462.480774 185.026443,447.463379 
+      C187.816223,439.034332 195.201767,433.893555 204.533981,433.866211 
+      C226.855804,433.800812 249.177979,433.847015 272.000000,433.848022 
+    z"/>
+    </svg>
   </div>
 </div>
 
@@ -362,3 +632,4 @@
       
 
   </div>
+  
